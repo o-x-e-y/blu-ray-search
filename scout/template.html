@@ -1,0 +1,95 @@
+<title>Blu-ray Scout</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<style>
+/* Terminal log: one mono column; by seller, or by film (5★, sets, the rest, lots); status is the loudest signal */
+:root {
+  --bg: #f4f5f6; --surface: #ffffff; --fg: #0d0f12; --muted: #3f4650; --line: #b9bec6;
+  --amber: #8a4b00; --cyan: #005f73; --ok: #1d6b2f; --warn: #8a4b00; --bad: #a3141f;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b0d10; --surface: #13171c; --fg: #f1f3f5; --muted: #b4bcc6; --line: #3a424d;
+  --amber: #ffb547; --cyan: #5fd4ea; --ok: #7ee08f; --warn: #ffb547; --bad: #ff7a7a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0b0d10; --surface: #13171c; --fg: #f1f3f5; --muted: #b4bcc6; --line: #3a424d;
+  --amber: #ffb547; --cyan: #5fd4ea; --ok: #7ee08f; --warn: #ffb547; --bad: #ff7a7a; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 17px/1.55 var(--mono); padding-inline: 16px; padding-block: 28px 64px; }
+main { max-width: 820px; margin: 0 auto; display: grid; gap: 36px; }
+h1, h2, h3 { margin: 0; font-weight: 700; text-wrap: balance; }
+h1 { font-size: 1.95rem; }
+h1::before { content: "$ "; color: var(--muted); }
+h2 { font-size: 1.48rem; text-transform: uppercase; letter-spacing: .06em; display: flex; gap: 10px; align-items: baseline; }
+h2::before { content: "##"; color: var(--muted); }
+h2 small { font-size: .85rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+h3 { font-size: 1.33rem; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+header { display: grid; gap: 10px; }
+.lede { color: var(--muted); margin: 0; max-width: 70ch; font-size: .9rem; }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .9rem; color: var(--muted); }
+.stats b { color: var(--fg); }
+section { display: grid; gap: 12px; }
+.list { display: grid; gap: 10px; }
+.item { background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; display: grid; gap: 6px; min-width: 0; }
+.row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+.item a { color: var(--fg); font-weight: 500; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.item a:hover { color: var(--cyan); text-decoration-color: currentColor; }
+.item a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.price { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.where { font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .9rem; min-width: 0; }
+.chip.dim { color: var(--muted); }
+.chip.flag { color: var(--bad); }
+.chip.flag::before { content: "! "; }
+.tag { color: var(--cyan); font-weight: 500; }
+.tag.loved { color: var(--amber); }
+.badge { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-right: 10px; }
+.badge.new { color: var(--ok); }
+.badge.age { color: var(--muted); }
+.badge.kind { color: var(--cyan); }
+.badge.detour { background: var(--bad); color: var(--bg); padding: 0 6px; }
+.badge.detour::before, .badge.detour::after { content: none; }
+.badge::before { content: "["; } .badge::after { content: "]"; }
+.film { display: grid; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.film .item { padding: 8px 12px; }
+.seller h3 a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; overflow-wrap: anywhere; }
+.seller h3 a:hover { color: var(--cyan); text-decoration-color: currentColor; }
+.seller h3 small { font-size: .85rem; color: var(--muted); font-weight: 500; }
+.seller .town { font-size: .9rem; color: var(--muted); font-weight: 500; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs button { font: inherit; font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  background: var(--surface); color: var(--muted); border: 1px solid var(--line); padding: 6px 14px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.tabs button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.panel { display: grid; gap: 36px; }
+.panel[hidden] { display: none; }
+.note { font-size: .85rem; color: var(--muted); margin: 0; max-width: 70ch; }
+.empty { color: var(--muted); margin: 0; }
+.empty::before { content: "-- "; }
+</style>
+
+<main>
+  <header>
+    <h1>blu-ray-scout</h1>
+    <p class="lede">New Marktplaats Blu-ray listings around Eindhoven, Helmond and home, matched against your Letterboxd films rated 4★ or higher and your watchlist. Reserved and sold listings are hidden. Checked __DATE__ at __TIME__.</p>
+    <div class="stats">__STATS__</div>
+  </header>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="by-seller" id="tab-by-seller">by seller</button>
+    <button role="tab" aria-selected="false" aria-controls="by-film" id="tab-by-film">by film</button>
+  </div>
+  <div class="panel" role="tabpanel" id="by-seller" aria-labelledby="tab-by-seller">__BY_SELLER__</div>
+  <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden>__BY_FILM__</div>
+</main>
+<script>
+const tabs = document.querySelectorAll('[role="tab"]');
+function show(id) {
+  for (const tab of tabs) {
+    const on = tab.getAttribute("aria-controls") === id;
+    tab.setAttribute("aria-selected", on);
+    document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
+  }
+  try { localStorage.setItem("view", id); } catch {}
+}
+for (const tab of tabs) tab.addEventListener("click", () => show(tab.getAttribute("aria-controls")));
+try { const saved = localStorage.getItem("view"); if (document.getElementById(saved)) show(saved); } catch {}
+</script>
+<script type="application/json" id="scout-data">__DATA__</script>
