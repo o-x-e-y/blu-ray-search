@@ -10,17 +10,28 @@ downloads `boxd` from the public nixos repo, so the routine doesn't need NixOS.
 
 ## Routine settings
 
-- **Prompt:** `Run the blu-ray-scout skill.`
-- **Schedule:** daily at 06:48 Europe/Amsterdam. Runs on the hour can start a
-  few minutes late.
+- **Prompt:** `Run the blu-ray-scout skill (.claude/skills/blu-ray-scout/SKILL.md).`
+- **Schedule:** cron `48 4 * * *` (UTC): 06:48 Amsterdam in summer, 05:48 in
+  winter.
 - **Repository:** this one.
-- **Connectors:** none. The saved-search emails only carry a count, not the
-  listings.
+- **Connectors:** only Claude Docs and Claude Code Remote. Gmail isn't needed:
+  the saved-search emails only carry a count, not the listings.
 - **Network:** Custom. Add `letterboxd.com`, `raw.githubusercontent.com` and
   `www.marktplaats.nl` to the defaults. The defaults already cover PyPI, which
   `setup.sh` needs for `curl_cffi`.
-- **Model:** Sonnet. Haiku matched as well on the 2026-10-16 test and is worth
-  trying.
+- **Model:** Haiku. It matched as well as Sonnet on the 2026-10-16 test; switch
+  to Sonnet if it misses things.
+
+## Film list
+
+Letterboxd's Cloudflare blocks `boxd` from the routine's cloud IP, so the routine
+falls back to the `scout/films.txt` committed here. Refresh it from a machine
+Letterboxd accepts:
+
+```bash
+bash scout/setup.sh && scout/.venv/bin/python scout/films.py
+git commit -m "Refresh film list" scout/films.txt && git push
+```
 
 ## Owned discs
 

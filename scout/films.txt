@@ -1,0 +1,759 @@
+adolescence-2025 | Adolescence (2025) | rated 5.0
+aftersun | Aftersun (2022) | rated 5.0
+anora | Anora (2024) | rated 5.0
+blue-heron | Blue Heron (2025) | rated 5.0
+chernobyl | Chernobyl (2019) | rated 5.0
+coco-2017 | Coco (2017) | rated 5.0
+dead-poets-society | Dead Poets Society (1989) | rated 5.0
+django-unchained | Django Unchained (2012) | rated 5.0
+dune-part-two | Dune: Part Two (2024) | rated 5.0
+frankenstein-2025 | Frankenstein (2025) | rated 5.0
+goodfellas | GoodFellas (1990) | rated 5.0
+hamnet | Hamnet (2025) | rated 5.0
+im-still-here-2024 | I'm Still Here (2024) | rated 5.0
+in-the-mood-for-love | In the Mood for Love (2000) | rated 5.0
+inception | Inception (2010) | rated 5.0
+its-a-wonderful-life | It's a Wonderful Life (1946) | rated 5.0
+kikis-delivery-service | Kiki's Delivery Service (1989) | rated 5.0
+marty-supreme | Marty Supreme (2025) | rated 5.0
+new-kids-turbo | New Kids Turbo (2010) | rated 5.0
+no-other-land | No Other Land (2024) | rated 5.0
+obsession-2025 | Obsession (2025) | rated 5.0
+oslo-august-31st | Oslo, August 31st (2011) | rated 5.0
+parasite-2019 | Parasite (2019) | rated 5.0
+poor-things-2023 | Poor Things (2023) | rated 5.0
+pulp-fiction | Pulp Fiction (1994) | rated 5.0
+sentimental-value-2025 | Sentimental Value (2025) | rated 5.0
+sing-sing-2023 | Sing Sing (2023) | rated 5.0
+spider-man-across-the-spider-verse | Spider-Man: Across the Spider-Verse (2023) | rated 5.0
+strange-darling | Strange Darling (2023) | rated 5.0
+the-apartment | The Apartment (1960) | rated 5.0
+the-dark-knight-rises | The Dark Knight Rises (2012) | rated 5.0
+the-favourite | The Favourite (2018) | rated 5.0
+the-handmaiden | The Handmaiden (2016) | rated 5.0
+the-shawshank-redemption | The Shawshank Redemption (1994) | rated 5.0
+the-sheep-detectives | The Sheep Detectives (2026) | rated 5.0
+the-social-network | The Social Network (2010) | rated 5.0
+the-spongebob-squarepants-movie | The SpongeBob SquarePants Movie (2004) | rated 5.0
+the-worst-person-in-the-world | The Worst Person in the World (2021) | rated 5.0
+toy-story | Toy Story (1995) | rated 5.0
+12-angry-men | 12 Angry Men (1957) | rated 4.5
+a-real-pain | A Real Pain (2024) | rated 4.5
+akira | Akira (1988) | rated 4.5
+all-we-imagine-as-light | All We Imagine as Light (2024) | rated 4.5
+almost-famous | Almost Famous (2000) | rated 4.5
+anatomy-of-a-fall | Anatomy of a Fall (2023) | rated 4.5
+are-you-there-god-its-me-margaret | Are You There God? It's Me, Margaret. (2023) | rated 4.5
+batman-begins | Batman Begins (2005) | rated 4.5
+black-bag-2025 | Black Bag (2025) | rated 4.5
+blue-moon-2025 | Blue Moon (2025) | rated 4.5
+boogie-nights | Boogie Nights (1997) | rated 4.5
+boyhood | Boyhood (2014) | rated 4.5
+brokeback-mountain | Brokeback Mountain (2005) | rated 4.5
+bugonia | Bugonia (2025) | rated 4.5
+clueless | Clueless (1995) | rated 4.5
+companion-2025 | Companion (2025) | rated 4.5
+dune-2021 | Dune (2021) | rated 4.5
+easy-a | Easy A (2010) | rated 4.5
+everything-everywhere-all-at-once | Everything Everywhere All at Once (2022) | rated 4.5
+fargo | Fargo (1996) | rated 4.5
+ferris-buellers-day-off | Ferris Bueller's Day Off (1986) | rated 4.5
+fight-club | Fight Club (1999) | rated 4.5
+furiosa-a-mad-max-saga | Furiosa: A Mad Max Saga (2024) | rated 4.5
+how-to-train-your-dragon-2025 | How to Train Your Dragon (2025) | rated 4.5
+i-swear | I Swear (2025) | rated 4.5
+inside-out-2015 | Inside Out (2015) | rated 4.5
+interstellar | Interstellar (2014) | rated 4.5
+la-la-land | La La Land (2016) | rated 4.5
+little-miss-sunshine | Little Miss Sunshine (2006) | rated 4.5
+little-women-2019 | Little Women (2019) | rated 4.5
+mickey-17 | Mickey 17 (2025) | rated 4.5
+moonrise-kingdom | Moonrise Kingdom (2012) | rated 4.5
+nosferatu-2024 | Nosferatu (2024) | rated 4.5
+once-upon-a-time-in-hollywood | Once Upon a Time... in Hollywood (2019) | rated 4.5
+oppenheimer-2023 | Oppenheimer (2023) | rated 4.5
+past-lives | Past Lives (2023) | rated 4.5
+primavera-2025 | Primavera (2025) | rated 4.5
+project-hail-mary | Project Hail Mary (2026) | rated 4.5
+return-of-the-jedi | Return of the Jedi (1983) | rated 4.5
+se7en | Se7en (1995) | rated 4.5
+shutter-island | Shutter Island (2010) | rated 4.5
+singin-in-the-rain | Singin' in the Rain (1952) | rated 4.5
+sinners-2025 | Sinners (2025) | rated 4.5
+sisu-road-to-revenge | Sisu: Road to Revenge (2025) | rated 4.5
+soul-2020 | Soul (2020) | rated 4.5
+spirited-away | Spirited Away (2001) | rated 4.5
+talk-to-me-2022 | Talk to Me (2022) | rated 4.5
+tangerine | Tangerine (2015) | rated 4.5
+the-banshees-of-inisherin | The Banshees of Inisherin (2022) | rated 4.5
+the-brutalist | The Brutalist (2024) | rated 4.5
+the-count-of-monte-cristo-2024 | The Count of Monte Cristo (2024) | rated 4.5
+the-departed | The Departed (2006) | rated 4.5
+the-holdovers | The Holdovers (2023) | rated 4.5
+the-invite-2026 | The Invite (2026) | rated 4.5
+the-kings-speech | The King's Speech (2010) | rated 4.5
+the-lobster | The Lobster (2015) | rated 4.5
+the-lord-of-the-rings-the-fellowship-of-the-ring | The Lord of the Rings: The Fellowship of the Ring (2001) | rated 4.5
+the-lord-of-the-rings-the-two-towers | The Lord of the Rings: The Two Towers (2002) | rated 4.5
+the-lunchbox | The Lunchbox (2013) | rated 4.5
+the-odyssey-2026 | The Odyssey (2026) | rated 4.5
+the-prestige | The Prestige (2006) | rated 4.5
+the-seed-of-the-sacred-fig | The Seed of the Sacred Fig (2024) | rated 4.5
+the-sound-of-music | The Sound of Music (1965) | rated 4.5
+the-substance | The Substance (2024) | rated 4.5
+the-teacher-who-promised-the-sea | The Teacher Who Promised the Sea (2023) | rated 4.5
+the-testament-of-ann-lee | The Testament of Ann Lee (2025) | rated 4.5
+the-whale-2022 | The Whale (2022) | rated 4.5
+the-wild-robot | The Wild Robot (2024) | rated 4.5
+there-will-be-blood | There Will Be Blood (2007) | rated 4.5
+train-dreams | Train Dreams (2025) | rated 4.5
+whiplash-2014 | Whiplash (2014) | rated 4.5
+whisper-of-the-heart | Whisper of the Heart (1995) | rated 4.5
+10-things-i-hate-about-you | 10 Things I Hate About You (1999) | rated 4.0
+a-complete-unknown | A Complete Unknown (2024) | rated 4.0
+a-little-something-extra | A Little Something Extra (2024) | rated 4.0
+a-sad-and-beautiful-world | A Sad and Beautiful World (2025) | rated 4.0
+american-psycho | American Psycho (2000) | rated 4.0
+apocalypse-now | Apocalypse Now (1979) | rated 4.0
+arco | Arco (2025) | rated 4.0
+arrival-2016 | Arrival (2016) | rated 4.0
+avatar | Avatar (2009) | rated 4.0
+barbie | Barbie (2023) | rated 4.0
+better-man-2024 | Better Man (2024) | rated 4.0
+birdman-or-the-unexpected-virtue-of-ignorance | Birdman or (The Unexpected Virtue of Ignorance) (2014) | rated 4.0
+black-dog-2024 | Black Dog (2024) | rated 4.0
+black-swan | Black Swan (2010) | rated 4.0
+blink-twice | Blink Twice (2024) | rated 4.0
+blue-is-the-warmest-color | Blue Is the Warmest Color (2013) | rated 4.0
+bob-marley-one-love | Bob Marley: One Love (2024) | rated 4.0
+bob-trevino-likes-it | Bob Trevino Likes It (2024) | rated 4.0
+boiling-point-2021 | Boiling Point (2021) | rated 4.0
+bon-voyage-marie | Bon Voyage, Marie (2025) | rated 4.0
+bridget-jones-mad-about-the-boy | Bridget Jones: Mad About the Boy (2025) | rated 4.0
+bring-her-back | Bring Her Back (2025) | rated 4.0
+cabaret | Cabaret (1972) | rated 4.0
+calle-malaga | Calle Malaga (2025) | rated 4.0
+catch-me-if-you-can-2002 | Catch Me If You Can (2002) | rated 4.0
+challengers | Challengers (2024) | rated 4.0
+civil-war-2024 | Civil War (2024) | rated 4.0
+dear-you-2026 | Dear You (2026) | rated 4.0
+die-hard | Die Hard (1988) | rated 4.0
+eternity-2025-1 | Eternity (2025) | rated 4.0
+ex-machina-2015 | Ex Machina (2015) | rated 4.0
+fabula-2025 | Fabula (2025) | rated 4.0
+familiar-touch | Familiar Touch (2024) | rated 4.0
+flow-2024 | Flow (2024) | rated 4.0
+gail-daughtry-and-the-celebrity-sex-pass | Gail Daughtry and the Celebrity Sex Pass (2026) | rated 4.0
+good-luck-have-fun-dont-die | Good Luck, Have Fun, Don't Die (2025) | rated 4.0
+hell-or-high-water | Hell or High Water (2016) | rated 4.0
+hit-man-2023 | Hit Man (2023) | rated 4.0
+home-sweet-home-2025-3 | Home Sweet Home (2025) | rated 4.0
+hoppers | Hoppers (2026) | rated 4.0
+how-to-make-millions-before-grandma-dies | How to Make Millions Before Grandma Dies (2024) | rated 4.0
+i-saw-the-tv-glow | I Saw the TV Glow (2024) | rated 4.0
+inside-out-2-2024 | Inside Out 2 (2024) | rated 4.0
+it-was-just-an-accident | It Was Just an Accident (2025) | rated 4.0
+jaws | Jaws (1975) | rated 4.0
+joker-2019 | Joker (2019) | rated 4.0
+just-the-two-of-us-2023-1 | Just the Two of Us (2023) | rated 4.0
+lady-bird | Lady Bird (2017) | rated 4.0
+legally-blonde | Legally Blonde (2001) | rated 4.0
+leviticus-2026 | Leviticus (2026) | rated 4.0
+longlegs | Longlegs (2024) | rated 4.0
+love-lies-bleeding-2024 | Love Lies Bleeding (2024) | rated 4.0
+mad-max-fury-road | Mad Max: Fury Road (2015) | rated 4.0
+manchester-by-the-sea | Manchester by the Sea (2016) | rated 4.0
+masters-of-the-universe-2026 | Masters of the Universe (2026) | rated 4.0
+mean-girls | Mean Girls (2004) | rated 4.0
+memento | Memento (2000) | rated 4.0
+miracle-on-34th-street | Miracle on 34th Street (1947) | rated 4.0
+monkey-man | Monkey Man (2024) | rated 4.0
+moonlight-2016 | Moonlight (2016) | rated 4.0
+mulholland-drive | Mulholland Drive (2001) | rated 4.0
+nosferatu | Nosferatu (1922) | rated 4.0
+ocean-with-david-attenborough | Ocean with David Attenborough (2025) | rated 4.0
+one-battle-after-another | One Battle After Another (2025) | rated 4.0
+one-flew-over-the-cuckoos-nest | One Flew Over the Cuckoo's Nest (1975) | rated 4.0
+one-life-2023 | One Life (2023) | rated 4.0
+our-girls-2025 | Our Girls (2025) | rated 4.0
+paaz | PAAZ (2026) | rated 4.0
+perfect-days-2023 | Perfect Days (2023) | rated 4.0
+porte-bagage | Porte Bagage (2025) | rated 4.0
+primetime-2026 | Primetime (2026) | rated 4.0
+princess-mononoke | Princess Mononoke (1997) | rated 4.0
+priscilla | Priscilla (2023) | rated 4.0
+rafiki-2018 | Rafiki (2018) | rated 4.0
+rental-family-2025 | Rental Family (2025) | rated 4.0
+resurrection-2025 | Resurrection (2025) | rated 4.0
+rushmore | Rushmore (1998) | rated 4.0
+send-help | Send Help (2026) | rated 4.0
+sisu-2022 | Sisu (2022) | rated 4.0
+small-things-like-these | Small Things Like These (2024) | rated 4.0
+sorry-baby-2025 | Sorry, Baby (2025) | rated 4.0
+sound-of-metal | Sound of Metal (2019) | rated 4.0
+spider-man-into-the-spider-verse | Spider-Man: Into the Spider-Verse (2018) | rated 4.0
+star-wars | Star Wars (1977) | rated 4.0
+superman-2025 | Superman (2025) | rated 4.0
+taxi-driver | Taxi Driver (1976) | rated 4.0
+teenage-sex-and-death-at-camp-miasma | Teenage Sex and Death at Camp Miasma (2026) | rated 4.0
+terminator-2-judgment-day | Terminator 2: Judgment Day (1991) | rated 4.0
+the-big-short | The Big Short (2015) | rated 4.0
+the-bikeriders | The Bikeriders (2023) | rated 4.0
+the-dark-knight | The Dark Knight (2008) | rated 4.0
+the-devil-wears-prada | The Devil Wears Prada (2006) | rated 4.0
+the-drama | The Drama (2026) | rated 4.0
+the-empire-strikes-back | The Empire Strikes Back (1980) | rated 4.0
+the-fall-guy-2024 | The Fall Guy (2024) | rated 4.0
+the-furious | The Furious (2025) | rated 4.0
+the-good-the-bad-and-the-ugly | The Good, the Bad and the Ugly (1966) | rated 4.0
+the-grand-budapest-hotel | The Grand Budapest Hotel (2014) | rated 4.0
+the-hunger-games-mockingjay-part-1 | The Hunger Games: Mockingjay – Part 1 (2014) | rated 4.0
+the-last-journey-2024 | The Last Journey (2024) | rated 4.0
+the-lighthouse-2019 | The Lighthouse (2019) | rated 4.0
+the-long-walk-2025 | The Long Walk (2025) | rated 4.0
+the-matrix | The Matrix (1999) | rated 4.0
+the-nice-guys | The Nice Guys (2016) | rated 4.0
+the-presidents-cake | The President's Cake (2025) | rated 4.0
+the-pupil-2025 | The Pupil (2025) | rated 4.0
+the-shining | The Shining (1980) | rated 4.0
+the-spongebob-movie-search-for-squarepants | The SpongeBob Movie: Search for SquarePants (2025) | rated 4.0
+the-squid-and-the-whale | The Squid and the Whale (2005) | rated 4.0
+the-ties-that-bind-us | The Ties That Bind Us (2024) | rated 4.0
+the-witch-2015 | The Witch (2015) | rated 4.0
+truly-naked | Truly Naked (2026) | rated 4.0
+tuner | Tuner (2025) | rated 4.0
+warfare | Warfare (2025) | rated 4.0
+wicked-for-good | Wicked: For Good (2025) | rated 4.0
+zootopia-2 | Zootopia 2 (2025) | rated 4.0
+nostalgia-1983 | Nostalgia (1983) | watchlist
+ivans-childhood | Ivan's Childhood (1962) | watchlist
+the-sacrifice | The Sacrifice (1986) | watchlist
+andrei-rublev | Andrei Rublev (1966) | watchlist
+mirror | Mirror (1975) | watchlist
+solaris | Solaris (1972) | watchlist
+stalker | Stalker (1979) | watchlist
+youri | Youri (2026) | watchlist
+some-kind-of-heaven | Some Kind of Heaven (2020) | watchlist
+a-face-in-the-crowd | A Face in the Crowd (1957) | watchlist
+revenant-2023 | Revenant (2023) | watchlist
+naza | NAZA (2026) | watchlist
+the-last-10-years | The Last 10 Years (2022) | watchlist
+quo-vadis-aida | Quo Vadis, Aida? (2020) | watchlist
+la-bola-negra | La Bola Negra (2026) | watchlist
+doctor-zhivago | Doctor Zhivago (1965) | watchlist
+josephine-2026 | Josephine (2026) | watchlist
+minotaur-2026 | Minotaur (2026) | watchlist
+michael-clayton | Michael Clayton (2007) | watchlist
+topsy-turvy | Topsy-Turvy (1999) | watchlist
+the-souvenir-part-ii | The Souvenir: Part II (2021) | watchlist
+a-room-with-a-view | A Room with a View (1986) | watchlist
+fame | Fame (1980) | watchlist
+dancing-on-the-edge-of-a-volcano | Dancing on the Edge of a Volcano (2023) | watchlist
+the-debut-2026 | The Debut (2026) | watchlist
+ink-2026 | Ink (2026) | watchlist
+lunana-a-yak-in-the-classroom | Lunana: A Yak in the Classroom (2019) | watchlist
+tony-2026 | Tony (2026) | watchlist
+booksmart | Booksmart (2019) | watchlist
+silent-friend | Silent Friend (2025) | watchlist
+the-princess-bride | The Princess Bride (1987) | watchlist
+nine-to-five | Nine to Five (1980) | watchlist
+love-letters-2025 | Love Letters (2025) | watchlist
+home-sweet-home-2025 | Home Sweet Home (2025) | watchlist
+thoroughbreds-2017 | Thoroughbreds (2017) | watchlist
+gohan-2026 | Gohan (2026) | watchlist
+blow-out | Blow Out (1981) | watchlist
+chungking-express | Chungking Express (1994) | watchlist
+picnic-at-hanging-rock | Picnic at Hanging Rock (1975) | watchlist
+aguirre-the-wrath-of-god | Aguirre, the Wrath of God (1972) | watchlist
+her-private-hell-2026 | Her Private Hell (2026) | watchlist
+the-funeral-1996 | The Funeral (1996) | watchlist
+mysterious-skin | Mysterious Skin (2004) | watchlist
+fjord-2026 | Fjord (2026) | watchlist
+remarkably-bright-creatures | Remarkably Bright Creatures (2026) | watchlist
+luca-2021 | Luca (2021) | watchlist
+the-other-guys | The Other Guys (2010) | watchlist
+throw-down | Throw Down (2004) | watchlist
+2012 | 2012 (2009) | watchlist
+cold-war-2018 | Cold War (2018) | watchlist
+ida | Ida (2013) | watchlist
+clarissa-2026 | Clarissa (2026) | watchlist
+club-kid | Club Kid (2026) | watchlist
+hope-2026 | Hope (2026) | watchlist
+fatherland-2026 | Fatherland (2026) | watchlist
+is-god-is | Is God Is (2026) | watchlist
+all-of-a-sudden-2026 | All of a Sudden (2026) | watchlist
+bringing-up-baby | Bringing Up Baby (1938) | watchlist
+lilya-4-ever | Lilya 4-ever (2002) | watchlist
+i-believe-in-unicorns | I Believe in Unicorns (2014) | watchlist
+ray-2004 | Ray (2004) | watchlist
+the-assistant-2019 | The Assistant (2019) | watchlist
+20th-century-girl | 20th Century Girl (2022) | watchlist
+kingdom-of-heaven | Kingdom of Heaven (2005) | watchlist
+close-2022 | Close (2022) | watchlist
+ponyo | Ponyo (2008) | watchlist
+petite-maman | Petite Maman (2021) | watchlist
+cmon-cmon | C'mon C'mon (2021) | watchlist
+red-rooms | Red Rooms (2023) | watchlist
+the-menu-2022 | The Menu (2022) | watchlist
+the-assessment-2024 | The Assessment (2024) | watchlist
+mulan | Mulan (1998) | watchlist
+kajillionaire | Kajillionaire (2020) | watchlist
+dolemite-is-my-name | Dolemite Is My Name (2019) | watchlist
+sick-of-myself | Sick of Myself (2022) | watchlist
+shepherds-2024 | Shepherds (2024) | watchlist
+fear-and-loathing-in-las-vegas | Fear and Loathing in Las Vegas (1998) | watchlist
+mystic-river | Mystic River (2003) | watchlist
+nangong-cheng | Nangong Cheng (2026) | watchlist
+now-i-met-her | Now I Met Her (2026) | watchlist
+complaint-no-713317 | Complaint No. 713317 (2025) | watchlist
+4-tigers | 4 Tigers (2025) | watchlist
+tokyo-taxi-2025 | Tokyo Taxi (2025) | watchlist
+butterfly-2026 | Butterfly (2026) | watchlist
+coherence | Coherence (2013) | watchlist
+boys-go-to-jupiter | Boys Go to Jupiter (2024) | watchlist
+6-days-2025 | 6 Days (2025) | watchlist
+embrace-of-the-serpent | Embrace of the Serpent (2015) | watchlist
+a-brother-and-7-siblings | A Brother and 7 Siblings (2024) | watchlist
+manas | Manas (2024) | watchlist
+tina-2024-1 | Tinā (2024) | watchlist
+homebound-2025 | Homebound (2025) | watchlist
+sunshine-2024 | Sunshine (2024) | watchlist
+sore-a-wife-from-the-future | Sore: A Wife from the Future (2025) | watchlist
+little-amelie-or-the-character-of-rain | Little Amélie or the Character of Rain (2025) | watchlist
+kokuho | Kokuho (2025) | watchlist
+little-trouble-girls | Little Trouble Girls (2025) | watchlist
+school-of-rock | School of Rock (2003) | watchlist
+wanda | Wanda (1970) | watchlist
+my-night-at-mauds | My Night at Maud's (1969) | watchlist
+ritual-2000 | Ritual (2000) | watchlist
+his-girl-friday | His Girl Friday (1940) | watchlist
+victoria-2015 | Victoria (2015) | watchlist
+a-garfield-christmas | A Garfield Christmas (1987) | watchlist
+shoplifters | Shoplifters (2018) | watchlist
+the-love-that-remains | The Love That Remains (2025) | watchlist
+souleymanes-story | Souleymane's Story (2024) | watchlist
+the-golden-spurtle | The Golden Spurtle (2025) | watchlist
+the-swimmer | The Swimmer (1968) | watchlist
+the-cook-the-thief-his-wife-her-lover | The Cook, the Thief, His Wife & Her Lover (1989) | watchlist
+forever-a-woman | Forever a Woman (1955) | watchlist
+breaking-glass | Breaking Glass (1980) | watchlist
+shall-we-dance-1996 | Shall We Dance? (1996) | watchlist
+paper-moon | Paper Moon (1973) | watchlist
+it-ends | It Ends (2025) | watchlist
+the-holy-mountain | The Holy Mountain (1973) | watchlist
+wake-up-dead-man | Wake Up Dead Man (2025) | watchlist
+when-life-gives-you-tangerines-2025 | When Life Gives You Tangerines (2025) | watchlist
+riff-raff | Riff-Raff (1991) | watchlist
+gone-girl | Gone Girl (2014) | watchlist
+pleasantville | Pleasantville (1998) | watchlist
+hannah-and-her-sisters | Hannah and Her Sisters (1986) | watchlist
+the-holiday | The Holiday (2006) | watchlist
+billy-elliot | Billy Elliot (2000) | watchlist
+welcome-to-the-dollhouse | Welcome to the Dollhouse (1995) | watchlist
+i-tonya | I, Tonya (2017) | watchlist
+second-victims | Second Victims (2025) | watchlist
+district-9 | District 9 (2009) | watchlist
+the-maltese-falcon-1941 | The Maltese Falcon (1941) | watchlist
+the-deer-hunter | The Deer Hunter (1978) | watchlist
+moulin-rouge-2001 | Moulin Rouge! (2001) | watchlist
+the-ox-bow-incident | The Ox-Bow Incident (1943) | watchlist
+i-love-you-man | I Love You, Man (2009) | watchlist
+the-peanut-butter-falcon | The Peanut Butter Falcon (2019) | watchlist
+the-heineken-kidnapping | The Heineken Kidnapping (2011) | watchlist
+black-book | Black Book (2006) | watchlist
+belle-de-jour | Belle de Jour (1967) | watchlist
+letter-never-sent | Letter Never Sent (1960) | watchlist
+the-cranes-are-flying | The Cranes Are Flying (1957) | watchlist
+as-tears-go-by | As Tears Go By (1988) | watchlist
+the-childrens-hour | The Children's Hour (1961) | watchlist
+addams-family-values | Addams Family Values (1993) | watchlist
+wuthering-heights-2026 | Wuthering Heights (2026) | watchlist
+double-indemnity | Double Indemnity (1944) | watchlist
+night-at-the-museum | Night at the Museum (2006) | watchlist
+when-harry-met-sally | When Harry Met Sally... (1989) | watchlist
+amelie | Amélie (2001) | watchlist
+the-lovers-on-the-bridge | The Lovers on the Bridge (1991) | watchlist
+lesbian-space-princess | Lesbian Space Princess (2025) | watchlist
+first-cow | First Cow (2019) | watchlist
+crash-landing-on-you | Crash Landing on You (2019) | watchlist
+mile-end-kicks | Mile End Kicks (2025) | watchlist
+hen-2025 | Hen (2025) | watchlist
+camp-2025 | CAMP (2025) | watchlist
+bad-apples-2025 | Bad Apples (2025) | watchlist
+badlands | Badlands (1973) | watchlist
+the-straight-story | The Straight Story (1999) | watchlist
+carrie-1976 | Carrie (1976) | watchlist
+drive-2011 | Drive (2011) | watchlist
+all-quiet-on-the-western-front-2022 | All Quiet on the Western Front (2022) | watchlist
+melancholia | Melancholia (2011) | watchlist
+ripley | Ripley (2024) | watchlist
+death-in-venice | Death in Venice (1971) | watchlist
+everybody-wants-some | Everybody Wants Some!! (2016) | watchlist
+the-hottest-state | The Hottest State (2006) | watchlist
+minari | Minari (2020) | watchlist
+after-hours | After Hours (1985) | watchlist
+the-princess-diaries | The Princess Diaries (2001) | watchlist
+the-breakfast-club | The Breakfast Club (1985) | watchlist
+werwulf | Werwulf (2026) | watchlist
+last-night-in-soho | Last Night in Soho (2021) | watchlist
+the-fifth-element | The Fifth Element (1997) | watchlist
+koyaanisqatsi | Koyaanisqatsi (1982) | watchlist
+true-romance | True Romance (1993) | watchlist
+scream | Scream (1996) | watchlist
+rosetta | Rosetta (1999) | watchlist
+amsterdamned | Amsterdamned (1988) | watchlist
+ghostlight-2024 | Ghostlight (2024) | watchlist
+seven-psychopaths | Seven Psychopaths (2012) | watchlist
+in-bruges | In Bruges (2008) | watchlist
+three-billboards-outside-ebbing-missouri | Three Billboards Outside Ebbing, Missouri (2017) | watchlist
+three-colours-white | Three Colours: White (1994) | watchlist
+three-colours-blue | Three Colours: Blue (1993) | watchlist
+three-colours-red | Three Colours: Red (1994) | watchlist
+apollo-10-a-space-age-childhood | Apollo 10½: A Space Age Childhood (2022) | watchlist
+licorice-pizza | Licorice Pizza (2021) | watchlist
+the-game | The Game (1997) | watchlist
+mary-poppins | Mary Poppins (1964) | watchlist
+life-of-pi | Life of Pi (2012) | watchlist
+revenge-2017 | Revenge (2017) | watchlist
+battle-royale | Battle Royale (2000) | watchlist
+the-addams-family | The Addams Family (1991) | watchlist
+the-arrival-of-a-train-at-la-ciotat | The Arrival of a Train at La Ciotat (1896) | watchlist
+children-of-men | Children of Men (2006) | watchlist
+man-with-a-movie-camera | Man with a Movie Camera (1929) | watchlist
+the-general | The General (1926) | watchlist
+an-autumn-afternoon | An Autumn Afternoon (1962) | watchlist
+knife-in-the-water | Knife in the Water (1962) | watchlist
+october-sky | October Sky (1999) | watchlist
+girl-interrupted | Girl, Interrupted (1999) | watchlist
+war-dogs-2016 | War Dogs (2016) | watchlist
+paris-texas | Paris, Texas (1984) | watchlist
+cleo-from-5-to-7 | Cléo from 5 to 7 (1962) | watchlist
+yi-yi | Yi Yi (2000) | watchlist
+edward-scissorhands | Edward Scissorhands (1990) | watchlist
+turkish-delight | Turkish Delight (1973) | watchlist
+sin-city | Sin City (2005) | watchlist
+blade-runner | Blade Runner (1982) | watchlist
+benedetta | Benedetta (2021) | watchlist
+elle | Elle (2016) | watchlist
+linda-linda-linda | Linda Linda Linda (2005) | watchlist
+the-green-mile | The Green Mile (1999) | watchlist
+city-of-god | City of God (2002) | watchlist
+the-wailing | The Wailing (2016) | watchlist
+i-saw-the-devil | I Saw the Devil (2010) | watchlist
+the-silence-of-the-lambs | The Silence of the Lambs (1991) | watchlist
+requiem-for-a-dream | Requiem for a Dream (2000) | watchlist
+amadeus | Amadeus (1984) | watchlist
+punch-drunk-love | Punch-Drunk Love (2002) | watchlist
+jack-the-giant-killer | Jack the Giant Killer (1962) | watchlist
+danger-diabolik | Danger: Diabolik (1968) | watchlist
+barry-lyndon | Barry Lyndon (1975) | watchlist
+diabolique-1955 | Diabolique (1955) | watchlist
+walle | WALL·E (2008) | watchlist
+a-man-called-otto | A Man Called Otto (2022) | watchlist
+eternal-sunshine-of-the-spotless-mind | Eternal Sunshine of the Spotless Mind (2004) | watchlist
+but-im-a-cheerleader | But I'm a Cheerleader (1999) | watchlist
+heathers | Heathers (1989) | watchlist
+the-ballad-of-wallis-island | The Ballad of Wallis Island (2025) | watchlist
+roman-holiday | Roman Holiday (1953) | watchlist
+wings-of-desire | Wings of Desire (1987) | watchlist
+the-big-lebowski | The Big Lebowski (1998) | watchlist
+game-night | Game Night (2018) | watchlist
+loving-vincent | Loving Vincent (2017) | watchlist
+black-panthers | Black Panthers (1968) | watchlist
+fish-tank | Fish Tank (2009) | watchlist
+along-the-coast | Along the Coast (1958) | watchlist
+a-touch-of-sin | A Touch of Sin (2013) | watchlist
+amy-2015 | Amy (2015) | watchlist
+beautiful-boy-2018 | Beautiful Boy (2018) | watchlist
+perfect-blue | Perfect Blue (1997) | watchlist
+the-400-blows | The 400 Blows (1959) | watchlist
+annie-hall | Annie Hall (1977) | watchlist
+run-lola-run | Run Lola Run (1998) | watchlist
+burning-2018 | Burning (2018) | watchlist
+the-master-and-margarita-2024 | The Master and Margarita (2024) | watchlist
+klaus | Klaus (2019) | watchlist
+all-that-jazz | All That Jazz (1979) | watchlist
+stand-by-me | Stand by Me (1986) | watchlist
+pearl-2022 | Pearl (2022) | watchlist
+uptown-girls | Uptown Girls (2003) | watchlist
+writing-hawa | Writing Hawa (2024) | watchlist
+the-wrestler | The Wrestler (2008) | watchlist
+big-little-lies | Big Little Lies (2017) | watchlist
+the-batman | The Batman (2022) | watchlist
+two-is-a-family | Two Is a Family (2016) | watchlist
+at-eternitys-gate | At Eternity's Gate (2018) | watchlist
+how-to-lose-a-guy-in-10-days | How to Lose a Guy in 10 Days (2003) | watchlist
+raising-arizona | Raising Arizona (1987) | watchlist
+the-night-comes-for-us | The Night Comes for Us (2018) | watchlist
+clue | Clue (1985) | watchlist
+mildred-pierce | Mildred Pierce (1945) | watchlist
+the-women | The Women (1939) | watchlist
+spider-man-beyond-the-spider-verse | Spider-Man: Beyond the Spider-Verse (2027) | watchlist
+selma | Selma (2014) | watchlist
+sicario-2015 | Sicario (2015) | watchlist
+the-goonies | The Goonies (1985) | watchlist
+apollo-13 | Apollo 13 (1995) | watchlist
+a-beautiful-mind | A Beautiful Mind (2001) | watchlist
+audition | Audition (1999) | watchlist
+pans-labyrinth | Pan's Labyrinth (2006) | watchlist
+strangers-on-a-train | Strangers on a Train (1951) | watchlist
+killer-klowns-from-outer-space | Killer Klowns from Outer Space (1988) | watchlist
+get-out-2017 | Get Out (2017) | watchlist
+thelma-louise | Thelma & Louise (1991) | watchlist
+the-fly-1986 | The Fly (1986) | watchlist
+ai-artificial-intelligence | A.I. Artificial Intelligence (2001) | watchlist
+magnolia | Magnolia (1999) | watchlist
+500-days-of-summer | (500) Days of Summer (2009) | watchlist
+stop-making-sense | Stop Making Sense (1984) | watchlist
+lady-vengeance | Lady Vengeance (2005) | watchlist
+decision-to-leave | Decision to Leave (2022) | watchlist
+the-battle-of-algiers | The Battle of Algiers (1966) | watchlist
+saving-private-ryan | Saving Private Ryan (1998) | watchlist
+mud | Mud (2012) | watchlist
+election | Election (1999) | watchlist
+dirty-dancing | Dirty Dancing (1987) | watchlist
+corpse-bride | Corpse Bride (2005) | watchlist
+van-gogh | Van Gogh (1991) | watchlist
+a-nos-amours | A Nos Amours (1983) | watchlist
+return-to-seoul | Return to Seoul (2022) | watchlist
+the-boy-who-wanted-to-be-a-bear | The Boy Who Wanted to Be a Bear (2002) | watchlist
+velvet-goldmine | Velvet Goldmine (1998) | watchlist
+dark-waters-2019 | Dark Waters (2019) | watchlist
+carol-2015 | Carol (2015) | watchlist
+madame-1988 | Madame (1988) | watchlist
+cunk-on-life | Cunk on Life (2024) | watchlist
+pieces-of-a-woman | Pieces of a Woman (2020) | watchlist
+eddington | Eddington (2025) | watchlist
+talladega-nights-the-ballad-of-ricky-bobby | Talladega Nights: The Ballad of Ricky Bobby (2006) | watchlist
+v-for-vendetta | V for Vendetta (2005) | watchlist
+speed-racer | Speed Racer (2008) | watchlist
+three-thousand-years-of-longing | Three Thousand Years of Longing (2022) | watchlist
+christopher-robin | Christopher Robin (2018) | watchlist
+before-sunrise | Before Sunrise (1995) | watchlist
+one-million-yen-girl | One Million Yen Girl (2008) | watchlist
+grand-illusion | Grand Illusion (1937) | watchlist
+sly-2023 | Sly (2023) | watchlist
+on-the-waterfront | On the Waterfront (1954) | watchlist
+the-miracle-woman | The Miracle Woman (1931) | watchlist
+rope | Rope (1948) | watchlist
+rear-window | Rear Window (1954) | watchlist
+the-man-who-shot-liberty-valance | The Man Who Shot Liberty Valance (1962) | watchlist
+only-lovers-left-alive | Only Lovers Left Alive (2013) | watchlist
+jane-eyre-2011 | Jane Eyre (2011) | watchlist
+skyfall | Skyfall (2012) | watchlist
+fracture | Fracture (2007) | watchlist
+humanist-vampire-seeking-consenting-suicidal-person | Humanist Vampire Seeking Consenting Suicidal Person (2023) | watchlist
+seven-samurai | Seven Samurai (1954) | watchlist
+x-2022 | X (2022) | watchlist
+the-girl-cant-help-it | The Girl Can't Help It (1956) | watchlist
+that-summer-in-paris | That Summer in Paris (2025) | watchlist
+babe | Babe (1995) | watchlist
+atlantics-2019 | Atlantics (2019) | watchlist
+dahomey | Dahomey (2024) | watchlist
+nausicaa-of-the-valley-of-the-wind | Nausicaä of the Valley of the Wind (1984) | watchlist
+sunlight-2024 | Sunlight (2024) | watchlist
+friendship-2024 | Friendship (2024) | watchlist
+a-cure-for-wellness | A Cure for Wellness (2016) | watchlist
+suspiria-2018 | Suspiria (2018) | watchlist
+dont-you-let-me-go | Don't You Let Me Go (2024) | watchlist
+father-2024-2 | Father (2024) | watchlist
+super-happy-forever | Super Happy Forever (2024) | watchlist
+swamp-dogg-gets-his-pool-painted | Swamp Dogg Gets His Pool Painted (2024) | watchlist
+purple-noon | Purple Noon (1960) | watchlist
+flat-girls | Flat Girls (2025) | watchlist
+sebastian-2024 | Sebastian (2024) | watchlist
+seoul-busters | Seoul Busters (2024) | watchlist
+the-birdcage | The Birdcage (1996) | watchlist
+the-teachers-lounge-2023 | The Teachers' Lounge (2023) | watchlist
+rustin-2023 | Rustin (2023) | watchlist
+emma-2020 | Emma. (2020) | watchlist
+broker-2022 | Broker (2022) | watchlist
+the-woman-king | The Woman King (2022) | watchlist
+a-thousand-and-one | A Thousand and One (2023) | watchlist
+i-used-to-be-funny | I Used to Be Funny (2023) | watchlist
+the-wonderful-story-of-henry-sugar | The Wonderful Story of Henry Sugar (2023) | watchlist
+nickel-boys | Nickel Boys (2024) | watchlist
+the-young-girls-of-rochefort | The Young Girls of Rochefort (1967) | watchlist
+lola | Lola (1961) | watchlist
+the-umbrellas-of-cherbourg | The Umbrellas of Cherbourg (1964) | watchlist
+two-for-the-road | Two for the Road (1967) | watchlist
+frances-ha | Frances Ha (2012) | watchlist
+marriage-story-2019 | Marriage Story (2019) | watchlist
+inland-empire | Inland Empire (2006) | watchlist
+twin-peaks-the-return | Twin Peaks: The Return (2017) | watchlist
+blue-velvet | Blue Velvet (1986) | watchlist
+twin-peaks-fire-walk-with-me | Twin Peaks: Fire Walk with Me (1992) | watchlist
+dogfight | Dogfight (1991) | watchlist
+real-women-have-curves | Real Women Have Curves (2002) | watchlist
+remember-the-titans | Remember the Titans (2000) | watchlist
+blue-valentine | Blue Valentine (2010) | watchlist
+josie-and-the-pussycats | Josie and the Pussycats (2001) | watchlist
+the-shop-around-the-corner | The Shop Around the Corner (1940) | watchlist
+may-december | May December (2023) | watchlist
+brief-encounter | Brief Encounter (1945) | watchlist
+collateral | Collateral (2004) | watchlist
+janet-planet | Janet Planet (2023) | watchlist
+citizen-kane | Citizen Kane (1941) | watchlist
+near-orouet | Near Orouët (1971) | watchlist
+the-lady-eve | The Lady Eve (1941) | watchlist
+secrets-lies | Secrets & Lies (1996) | watchlist
+25-watts | 25 Watts (2001) | watchlist
+shermans-march | Sherman's March (1985) | watchlist
+i-was-born-but | I Was Born, But... (1932) | watchlist
+high-hopes | High Hopes (1988) | watchlist
+wild-child | Wild Child (2008) | watchlist
+patriot-games | Patriot Games (1992) | watchlist
+the-fugitive-1993 | The Fugitive (1993) | watchlist
+commando | Commando (1985) | watchlist
+conan-the-barbarian | Conan the Barbarian (1982) | watchlist
+the-edge-of-seventeen | The Edge of Seventeen (2016) | watchlist
+midnight-in-paris | Midnight in Paris (2011) | watchlist
+28-days-later | 28 Days Later (2002) | watchlist
+isle-of-dogs-2018 | Isle of Dogs (2018) | watchlist
+skunk-2023 | Skunk (2023) | watchlist
+the-quiet-girl | The Quiet Girl (2022) | watchlist
+the-truman-show | The Truman Show (1998) | watchlist
+the-rocky-horror-picture-show | The Rocky Horror Picture Show (1975) | watchlist
+elephant-2003 | Elephant (2003) | watchlist
+im-glad-youre-dead-now | I’m Glad You’re Dead Now (2025) | watchlist
+your-name | Your Name. (2016) | watchlist
+viet-and-nam | Việt and Nam (2024) | watchlist
+scrapper-2023 | Scrapper (2023) | watchlist
+sound-of-falling | Sound of Falling (2025) | watchlist
+thelma-2017 | Thelma (2017) | watchlist
+the-secret-agent-2025 | The Secret Agent (2025) | watchlist
+nino-2025 | Nino (2025) | watchlist
+my-fathers-shadow-2025 | My Father's Shadow (2025) | watchlist
+lucky-lu | Lucky Lu (2025) | watchlist
+left-handed-girl | Left-Handed Girl (2025) | watchlist
+this-is-not-a-film | This Is Not a Film (2011) | watchlist
+crimson-gold | Crimson Gold (2003) | watchlist
+happening | Happening (2021) | watchlist
+a-silent-voice-the-movie | A Silent Voice: The Movie (2016) | watchlist
+the-shape-of-water | The Shape of Water (2017) | watchlist
+babylon-2022 | Babylon (2022) | watchlist
+bullet-train | Bullet Train (2022) | watchlist
+o-brother-where-art-thou | O Brother, Where Art Thou? (2000) | watchlist
+burn-after-reading | Burn After Reading (2008) | watchlist
+fantastic-mr-fox | Fantastic Mr. Fox (2009) | watchlist
+heat-1995 | Heat (1995) | watchlist
+promising-young-woman | Promising Young Woman (2020) | watchlist
+submarine | Submarine (2010) | watchlist
+the-cabinet-of-dr-caligari-1920 | The Cabinet of Dr. Caligari (1920) | watchlist
+the-world-to-come | The World to Come (2020) | watchlist
+the-ugly-stepsister | The Ugly Stepsister (2025) | watchlist
+persona | Persona (1966) | watchlist
+the-hurricane | The Hurricane (1999) | watchlist
+nonnas | Nonnas (2025) | watchlist
+juno | Juno (2007) | watchlist
+the-double-2013 | The Double (2013) | watchlist
+a-different-man | A Different Man (2024) | watchlist
+point-break | Point Break (1991) | watchlist
+the-fast-and-the-furious-2001 | The Fast and the Furious (2001) | watchlist
+the-aviator | The Aviator (2004) | watchlist
+dogtooth | Dogtooth (2009) | watchlist
+atonement | Atonement (2007) | watchlist
+the-perks-of-being-a-wallflower | The Perks of Being a Wallflower (2012) | watchlist
+normal-people-2020 | Normal People (2020) | watchlist
+good-one | Good One (2024) | watchlist
+a-separation | A Separation (2011) | watchlist
+all-the-real-girls | All the Real Girls (2003) | watchlist
+ikiru | Ikiru (1952) | watchlist
+its-such-a-beautiful-day | It's Such a Beautiful Day (2012) | watchlist
+baby-reindeer | Baby Reindeer (2024) | watchlist
+trainspotting | Trainspotting (1996) | watchlist
+synecdoche-new-york | Synecdoche, New York (2008) | watchlist
+enter-the-dragon | Enter the Dragon (1973) | watchlist
+a-charlie-brown-christmas | A Charlie Brown Christmas (1965) | watchlist
+the-red-shoes | The Red Shoes (1948) | watchlist
+unforgiven | Unforgiven (1992) | watchlist
+cruella | Cruella (2021) | watchlist
+black-cat-white-cat | Black Cat, White Cat (1998) | watchlist
+the-girl-with-the-needle | The Girl with the Needle (2024) | watchlist
+the-virgin-suicides | The Virgin Suicides (1999) | watchlist
+y-tu-mama-tambien | Y Tu Mamá También (2001) | watchlist
+la-chimera | La Chimera (2023) | watchlist
+phantom-thread | Phantom Thread (2017) | watchlist
+coraline | Coraline (2009) | watchlist
+over-the-garden-wall-2014 | Over the Garden Wall (2014) | watchlist
+vitoria-2025 | Vitória (2025) | watchlist
+tar-2022 | TÁR (2022) | watchlist
+jojo-rabbit | Jojo Rabbit (2019) | watchlist
+prince-of-broadway | Prince of Broadway (2008) | watchlist
+take-out-2004 | Take Out (2004) | watchlist
+the-bisexual | The Bisexual (2018) | watchlist
+the-fall | The Fall (2006) | watchlist
+mother-2009 | Mother (2009) | watchlist
+snowpiercer | Snowpiercer (2013) | watchlist
+memories-of-murder | Memories of Murder (2003) | watchlist
+echoes-of-the-rainbow | Echoes of the Rainbow (2010) | watchlist
+donnie-darko | Donnie Darko (2001) | watchlist
+the-darjeeling-limited | The Darjeeling Limited (2007) | watchlist
+the-girl-with-the-dragon-tattoo-2011 | The Girl with the Dragon Tattoo (2011) | watchlist
+superbad | Superbad (2007) | watchlist
+howls-moving-castle | Howl's Moving Castle (2004) | watchlist
+hereditary | Hereditary (2018) | watchlist
+the-wolf-of-wall-street | The Wolf of Wall Street (2013) | watchlist
+her | Her (2013) | watchlist
+zoolander | Zoolander (2001) | watchlist
+sometimes-i-think-about-dying-2023 | Sometimes I Think About Dying (2023) | watchlist
+ben-hur-1959 | Ben-Hur (1959) | watchlist
+vertigo | Vertigo (1958) | watchlist
+hottieboombalottie | HottieBoombaLottie (2008) | watchlist
+pride-and-prejudice-1995 | Pride and Prejudice (1995) | watchlist
+pride-prejudice | Pride & Prejudice (2005) | watchlist
+the-golden-glove | The Golden Glove (2019) | watchlist
+walk-the-line | Walk the Line (2005) | watchlist
+it-follows | It Follows (2014) | watchlist
+2001-a-space-odyssey | 2001: A Space Odyssey (1968) | watchlist
+eyes-wide-shut | Eyes Wide Shut (1999) | watchlist
+naked | Naked (1993) | watchlist
+the-outrun | The Outrun (2024) | watchlist
+possession | Possession (1981) | watchlist
+secretary | Secretary (2002) | watchlist
+the-room | The Room (2003) | watchlist
+miami-connection | Miami Connection (1987) | watchlist
+elvis-2022 | Elvis (2022) | watchlist
+the-notebook | The Notebook (2004) | watchlist
+about-time | About Time (2013) | watchlist
+call-me-by-your-name | Call Me by Your Name (2017) | watchlist
+good-will-hunting | Good Will Hunting (1997) | watchlist
+midsommar | Midsommar (2019) | watchlist
+uncut-gems | Uncut Gems (2019) | watchlist
+1917 | 1917 (2019) | watchlist
+my-neighbor-totoro | My Neighbor Totoro (1988) | watchlist
+scott-pilgrim-vs-the-world | Scott Pilgrim vs. the World (2010) | watchlist
+asteroid-city | Asteroid City (2023) | watchlist
+the-boy-and-the-heron | The Boy and the Heron (2023) | watchlist
+the-zone-of-interest | The Zone of Interest (2023) | watchlist
+hundreds-of-beavers | Hundreds of Beavers (2022) | watchlist
+didi-2024 | Dìdi (弟弟) (2024) | watchlist
+memoir-of-a-snail | Memoir of a Snail (2024) | watchlist
+waves-2024-1 | Waves (2024) | watchlist
+barbarian-2022 | Barbarian (2022) | watchlist
+airplane | Airplane! (1980) | watchlist
+once-upon-a-time-in-the-west | Once Upon a Time in the West (1968) | watchlist
+nights-of-cabiria | Nights of Cabiria (1957) | watchlist
+the-thing | The Thing (1982) | watchlist
+oldboy | Oldboy (2003) | watchlist
+la-haine | La Haine (1995) | watchlist
+a-brighter-summer-day | A Brighter Summer Day (1991) | watchlist
+the-lord-of-the-rings-the-return-of-the-king | The Lord of the Rings: The Return of the King (2003) | watchlist
+ran | Ran (1985) | watchlist
+le-trou | Le Trou (1960) | watchlist
+grave-of-the-fireflies | Grave of the Fireflies (1988) | watchlist
+schindlers-list | Schindler's List (1993) | watchlist
+high-and-low | High and Low (1963) | watchlist
+come-and-see | Come and See (1985) | watchlist
+12-years-a-slave | 12 Years a Slave (2013) | watchlist
+leptirica | Leptirica (1973) | watchlist
+pocahontas | Pocahontas (1995) | watchlist
+the-texas-chain-saw-massacre | The Texas Chain Saw Massacre (1974) | watchlist
+late-night-with-the-devil | Late Night with the Devil (2023) | watchlist
+bird-2024 | Bird (2024) | watchlist
+the-iron-claw-2023 | The Iron Claw (2023) | watchlist
+close-your-eyes-2023 | Close Your Eyes (2023) | watchlist
+society-of-the-snow | Society of the Snow (2023) | watchlist
+killers-of-the-flower-moon | Killers of the Flower Moon (2023) | watchlist
+monster-2023 | Monster (2023) | watchlist
+godzilla-minus-one | Godzilla Minus One (2023) | watchlist

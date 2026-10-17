@@ -1,7 +1,6 @@
 .venv/
 scout/vendor/
 scout/.venv/
-scout/films.txt
 scout/results.json
 scout/page.html
 scout/listings.json

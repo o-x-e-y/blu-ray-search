@@ -22,8 +22,14 @@ scout/.venv/bin/python scout/films.py
 
 This writes `scout/films.txt`, one film per line: `slug | Title (year) | rated 4.5`
 for films they love, `| watchlist` for films they want to see. Films already
-owned are left out. If `films.py` fails, stop and report the error. Matching
-against a missing list would publish a page that looks like "nothing today".
+owned are left out.
+
+Letterboxd's Cloudflare often blocks cloud IPs. When it does, `films.py` keeps
+the `films.txt` committed in the repo and prints the date of that commit. Carry
+on with that list and mention the date in the report. Don't retry `films.py`:
+the block doesn't clear within a run. If it exits with an error, stop and report
+it. Matching against a missing list would publish a page that looks like
+"nothing today".
 
 ## 2. Fetch the listings
 
