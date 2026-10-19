@@ -189,7 +189,8 @@ def main() -> None:
                              "Grouped by who sells it, so one message can cover several ads. Best-rated film first, then sellers with the most ads.")
     stats = (f'<span>new <b>{len(results["items"])}</b></span><span>available <b>{len(shown)}</b></span>'
              f'<span>reserved, hidden <b>{count("reserved")}</b></span><span>sold since last run <b>{gone}</b></span>')
-    data = json.dumps({"items": items}, ensure_ascii=False).replace("</", "<\\/")
+    fetched_at = json.loads((HERE / "listings.json").read_text())["fetched_at"]
+    data = json.dumps({"fetched_at": fetched_at, "items": items}, ensure_ascii=False).replace("</", "<\\/")
     stamp = datetime.now(ZoneInfo("Europe/Amsterdam")).strftime("%H:%M")
     page = (HERE / "template.html").read_text()
     for key, value in {"__DATE__": today, "__TIME__": stamp, "__STATS__": stats, "__BY_FILM__": by_film_body,

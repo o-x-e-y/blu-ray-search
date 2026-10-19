@@ -1,7 +1,7 @@
 # blu-ray-search
 
-A morning routine that fetches the Blu-rays listed on Marktplaats in the last
-day around Eindhoven, Helmond and home (`scout/fetch.py`, no login), matches them against Letterboxd (films rated 4★+, the watchlist, minus discs
+A morning routine that fetches the Blu-rays listed on Marktplaats since the last
+successful run around Eindhoven, Helmond and home (`scout/fetch.py`, no login), matches them against Letterboxd (films rated 4★+, the watchlist, minus discs
 already owned), and publishes the
 [Blu-ray Scout](https://claude.ai/artifact/HkWBAnLZYRZ2CY8MRjuHji) page.
 
