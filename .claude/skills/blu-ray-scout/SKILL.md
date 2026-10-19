@@ -43,9 +43,9 @@ scout/.venv/bin/python scout/fetch.py <saved page file>
 ```
 
 This runs the three searches without logging in and writes `scout/listings.json`.
-The page stores when the last published run fetched, so the searches start from
-there and nothing is missed after a failed run. Listings the page already tracks
-and reserved ones are left out. `listings` holds the rest, each with `id`,
+The page stores which listings the last published run saw, so `listings` holds
+only the ones posted since, and nothing is missed after a failed run. Listings
+the page already tracks and reserved ones are left out. Each has `id`,
 `title`, `description` (cut off at 200 characters), `price` (as Marktplaats shows
 it), `town`, `url` and `seller`. `listings_seen` is the number of listings in
 that array. If `fetch.py` fails, stop and report the error.
@@ -135,9 +135,10 @@ Write `scout/results.json`:
    scout/.venv/bin/python scout/render.py scout/results.json <saved page file>
    ```
    Give the Bash call a `timeout` of 600000, because it takes a few minutes.
-   This opens every tracked listing's page once, one per second, to mark it
-   available, reserved or gone, and to read when it was posted and who sells
-   it. Only available listings are shown. Reserved ones stay tracked in case
+   This marks every tracked listing available, reserved or gone. Most statuses
+   come from the searches in step 2; it opens a listing's own page, one per
+   second, only for new finds (to read the seller) and for listings that
+   dropped out of the search. Only available listings are shown. Reserved ones stay tracked in case
    the reservation falls through, and gone ones are dropped. Problems with
    single listings go to stderr; mention them in the report.
 2. Publish `scout/page.html` with the Artifact tool, `url` set to the page

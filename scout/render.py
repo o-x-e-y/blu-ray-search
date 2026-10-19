@@ -4,10 +4,13 @@
     render.py results.json [previous.html] [--no-check]
 
 previous.html is the currently published page. Its finds are carried over
-(deduplicated by listing id) for as long as the listing is still up. Each
-listing's own page says whether it is available, reserved or gone, and since
-when it has been online. Only available finds are shown. Reserved ones stay
-tracked in case the reservation falls through; gone ones are dropped.
+(deduplicated by listing id) for as long as the listing is still up. The area
+search in listings.json says whether a tracked listing is available or
+reserved. A listing's own page is opened only for new finds, to read their
+seller and since when they've been online, and for listings missing from the
+search, which are gone or outside the search circles. Only available finds are
+shown. Reserved ones stay tracked in case the reservation falls through; gone
+ones are dropped.
 """
 import html
 import json
@@ -156,8 +159,12 @@ def main() -> None:
                        if i["id"] not in fresh]
     items = results["items"] + carried
 
-    if "--no-check" not in sys.argv:
-        for item in items:
+    fetched = json.loads((HERE / "listings.json").read_text())
+    seen, reserved = set(fetched["seen"]), set(fetched["reserved"])
+    for item in items:
+        if item["id"] in seen and "seller" in item:
+            item["status"] = "reserved" if item["id"] in reserved else "available"
+        elif "--no-check" not in sys.argv:
             check(item)
             time.sleep(1)
 
@@ -189,8 +196,7 @@ def main() -> None:
                              "Grouped by who sells it, so one message can cover several ads. Best-rated film first, then sellers with the most ads.")
     stats = (f'<span>new <b>{len(results["items"])}</b></span><span>available <b>{len(shown)}</b></span>'
              f'<span>reserved, hidden <b>{count("reserved")}</b></span><span>sold since last run <b>{gone}</b></span>')
-    fetched_at = json.loads((HERE / "listings.json").read_text())["fetched_at"]
-    data = json.dumps({"fetched_at": fetched_at, "items": items}, ensure_ascii=False).replace("</", "<\\/")
+    data = json.dumps({"seen": fetched["seen"], "items": items}, ensure_ascii=False).replace("</", "<\\/")
     stamp = datetime.now(ZoneInfo("Europe/Amsterdam")).strftime("%H:%M")
     page = (HERE / "template.html").read_text()
     for key, value in {"__DATE__": today, "__TIME__": stamp, "__STATS__": stats, "__BY_FILM__": by_film_body,
