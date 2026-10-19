@@ -4,3 +4,4 @@ scout/.venv/
 scout/results.json
 scout/page.html
 scout/listings.json
+__pycache__/

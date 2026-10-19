@@ -14,23 +14,23 @@ publish it.
 Nobody is watching this run, so don't ask questions. Make each call yourself and
 note any doubt in the item's `note`.
 
-## 1. Build the film list
+## 1. Set up
 
 ```bash
 bash scout/setup.sh
-scout/.venv/bin/python scout/films.py
+git log -1 --format=%cs -- scout/films.txt
 ```
 
-This writes `scout/films.txt`, one film per line: `slug | Title (year) | rated 4.5`
+`scout/films.txt` is the film list, one film per line: `slug | Title (year) | rated 4.5`
 for films they love, `| watchlist` for films they want to see. Films already
-owned are left out.
+owned are left out. The user generates it on their own machine, because
+Letterboxd's Cloudflare blocks cloud IPs, so don't run `scout/films.py` or
+contact Letterboxd. Mention the list's commit date (the `git log` line) in the
+report.
 
-Letterboxd's Cloudflare often blocks cloud IPs. When it does, `films.py` keeps
-the `films.txt` committed in the repo and prints the date of that commit. Carry
-on with that list and mention the date in the report. Don't retry `films.py`:
-the block doesn't clear within a run. If it exits with an error, stop and report
-it. Matching against a missing list would publish a page that looks like
-"nothing today".
+If `setup.sh` fails or `films.txt` is missing or empty, stop and report it.
+Matching against a missing list would publish a page that looks like "nothing
+today".
 
 ## 2. Fetch the listings
 

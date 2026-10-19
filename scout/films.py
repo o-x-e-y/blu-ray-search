@@ -5,10 +5,7 @@
     slug | Title (year) | watchlist
 
 Films rated 4.0 or higher plus the watchlist, minus anything on the owned list.
-
-Letterboxd's Cloudflare tends to challenge cloud IPs, so the repo carries a
-films.txt generated on the user's machine. When boxd is blocked, that copy is
-kept and its commit date reported.
+Run it on the user's machine: Letterboxd's Cloudflare blocks cloud IPs.
 """
 import json
 import os
@@ -22,10 +19,6 @@ USER = "oxey"
 OWNED_LIST = None
 
 
-class BoxdFailed(Exception):
-    pass
-
-
 def boxd(*args: str) -> list[dict]:
     out = subprocess.run(
         [str(HERE / ".venv/bin/python"), str(HERE / "vendor/boxd.py"), "--json", *args],
@@ -34,11 +27,11 @@ def boxd(*args: str) -> list[dict]:
         text=True,
     )
     if out.returncode:
-        raise BoxdFailed(f"boxd {' '.join(args)} failed: {out.stderr.strip()}")
+        sys.exit(f"boxd {' '.join(args)} failed: {out.stderr.strip()}")
     return json.loads(out.stdout)["films"]
 
 
-def build() -> list[str]:
+def main() -> None:
     owned = {f["slug"] for f in boxd("list", OWNED_LIST)} if OWNED_LIST else set()
     lines = []
     for film in boxd("ratings"):
@@ -47,19 +40,6 @@ def build() -> list[str]:
     for film in boxd("watchlist"):
         if film["slug"] not in owned:
             lines.append(f"{film['slug']} | {film['title']} ({film['year']}) | watchlist")
-    return lines
-
-
-def main() -> None:
-    try:
-        lines = build()
-    except BoxdFailed as e:
-        if not (HERE / "films.txt").exists():
-            sys.exit(str(e))
-        committed = subprocess.run(["git", "log", "-1", "--format=%cs", "--", "films.txt"],
-                                   cwd=HERE, capture_output=True, text=True).stdout.strip()
-        print(f"{e}\nKept the films.txt committed on {committed or 'an unknown date'} instead.")
-        return
     (HERE / "films.txt").write_text("\n".join(lines) + "\n")
     print(f"{len(lines)} films written")
 
