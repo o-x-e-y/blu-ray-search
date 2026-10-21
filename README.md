@@ -33,6 +33,13 @@ restore button. Neither button asks for confirmation, since a mistake is one
 click to undo. The routine needs no part in it: a trashed ad stays tracked, so it is
 never offered as new again.
 
+## Changing the page
+
+A change to `scout/template.html` alone doesn't need a scout run, which costs
+Marktplaats requests. Commit and push it so later runs keep it, then patch the
+same blocks into the live page and republish it to the same URL without
+`capabilities`, so the trash database stays.
+
 ## Film list
 
 Letterboxd's Cloudflare blocks `boxd` from the routine's cloud IP, so the routine
