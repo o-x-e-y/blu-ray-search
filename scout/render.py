@@ -4,7 +4,8 @@
     render.py results.json [previous.html] [--no-check]
 
 previous.html is the currently published page. Its finds are carried over
-(deduplicated by listing id) for as long as the listing is still up. The area
+(deduplicated by listing id) for as long as the listing is still up and holds a
+film still in films.txt. Only this run's finds get the "new" badge. The area
 search in listings.json says whether a tracked listing is available or
 reserved. A listing's own page is opened only for new finds, to read their
 seller and since when they've been online, and for listings missing from the
@@ -89,7 +90,8 @@ def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -
         bits.append(f'<span class="chip dim">{item["films_in_listing"]} films in ad</span>')
     bits += [f'<span class="chip flag">{html.escape(f)}</span>' for f in item.get("flags", [])]
     days = (date.fromisoformat(today) - date.fromisoformat(item.get("since") or item["found"])).days
-    badges = '<span class="badge new">&lt;1d ago</span>' if days < 1 else f'<span class="badge age">{days}d ago</span>'
+    badges = '<span class="badge found">new</span>' if item.get("new") else ""
+    badges += '<span class="badge new">&lt;1d ago</span>' if days < 1 else f'<span class="badge age">{days}d ago</span>'
     if kind and (item.get("films_in_listing") or 1) >= 2:
         badges += f'<span class="badge kind">{"set" if item["films"] else "lot"}</span>'
     if item["detour"]:
@@ -149,14 +151,24 @@ def main() -> None:
     today = results["date"]
     for item in results["items"]:
         item["found"] = today
+        item["new"] = True
 
-    carried = []
+    films = films_by_slug()
+    carried, unwanted = [], 0
     if len(args) > 1:
         found = DATA.search(Path(args[1]).read_text())
         if found:
             fresh = {i["id"] for i in results["items"]}
-            carried = [i for i in json.loads(found.group(1))["items"]
-                       if i["id"] not in fresh]
+            for item in json.loads(found.group(1))["items"]:
+                if item["id"] in fresh:
+                    continue
+                item.pop("new", None)
+                wanted = [s for s in item["films"] if s in films]
+                if item["films"] and not wanted:
+                    unwanted += 1
+                    continue
+                item["films"] = wanted
+                carried.append(item)
     items = results["items"] + carried
 
     fetched = json.loads((HERE / "listings.json").read_text())
@@ -173,7 +185,6 @@ def main() -> None:
     items = [i for i in items if i.get("status") != "gone"]
     shown = [i for i in items if i.get("status", "available") == "available"]
 
-    films = films_by_slug()
     matched = [i for i in shown if i["films"]]
     best = lambda i: max(stars(films.get(s, {"tag": ""})["tag"]) for s in i["films"])
     sets = sorted(sorted((i for i in matched if (i.get("films_in_listing") or 1) >= 2), key=posted, reverse=True),
@@ -196,7 +207,7 @@ def main() -> None:
                              "Grouped by who sells it, so one message can cover several ads. Best-rated film first, then sellers with the most ads.")
     stats = (f'<span>new <b>{len(results["items"])}</b></span><span>available <b>{len(shown)}</b></span>'
              f'<span>reserved, hidden <b>{count("reserved")}</b></span><span>sold since last run <b>{gone}</b></span>')
-    data = json.dumps({"seen": fetched["seen"], "items": items}, ensure_ascii=False).replace("</", "<\\/")
+    data = json.dumps({"seen": fetched["seen"], "films": sorted(films), "items": items}, ensure_ascii=False).replace("</", "<\\/")
     stamp = datetime.now(ZoneInfo("Europe/Amsterdam")).strftime("%H:%M")
     page = (HERE / "template.html").read_text()
     for key, value in {"__DATE__": today, "__TIME__": stamp, "__STATS__": stats, "__BY_FILM__": by_film_body,
@@ -205,7 +216,8 @@ def main() -> None:
         page = page.replace(key, value)
     (HERE / "page.html").write_text(page)
     print(f"page.html: {len(results['items'])} new, {len(carried)} carried over, "
-          f"{count('reserved')} reserved and hidden, {gone} gone and dropped")
+          f"{count('reserved')} reserved and hidden, {gone} gone and dropped, "
+          f"{unwanted} dropped because their films left films.txt")
 
 
 if __name__ == "__main__":

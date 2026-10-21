@@ -44,6 +44,8 @@ section { display: grid; gap: 12px; }
 .tag.loved { color: var(--amber); }
 .badge { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-right: 10px; }
 .badge.new { color: var(--ok); }
+.badge.found { background: var(--ok); color: var(--bg); padding: 0 6px; }
+.badge.found::before, .badge.found::after { content: none; }
 .badge.age { color: var(--muted); }
 .badge.kind { color: var(--cyan); }
 .badge.detour { background: var(--bad); color: var(--bg); padding: 0 6px; }

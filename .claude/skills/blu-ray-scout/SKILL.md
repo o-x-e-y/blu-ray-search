@@ -1,13 +1,13 @@
 ---
 name: blu-ray-scout
-description: Daily scout of new Marktplaats Blu-ray listings, matched against the user's Letterboxd favourites and watchlist, published as the Blu-ray Scout page. Run by a scheduled routine each morning.
+description: Scout of new Marktplaats Blu-ray listings, matched against the user's Letterboxd favourites and watchlist, published as the Blu-ray Scout page. Run on demand by a routine.
 ---
 
 # Blu-ray Scout
 
 The user is building a disc collection for a 4K projector because their internet
-can't stream in 4K. Each morning you fetch the Blu-ray listings posted since the
-last successful run within 8 km of Eindhoven (5611AC), 8 km of Helmond (5701RJ)
+can't stream in 4K. Each run you fetch the Blu-ray listings posted since the
+last published run within 8 km of Eindhoven (5611AC), 8 km of Helmond (5701RJ)
 and 6 km of home (5735SZ), turn them into a list of discs worth picking up, and
 publish it.
 
@@ -50,6 +50,11 @@ the page already tracks and reserved ones are left out. Each has `id`,
 it), `town`, `url` and `seller`. `listings_seen` is the number of listings in
 that array. If `fetch.py` fails, stop and report the error.
 
+`recheck` holds the films added to `films.txt` since the last published run
+(`recheck.films`, as slugs) and every other untracked listing in the area
+(`recheck.listings`, same fields). These ads were matched before, but not
+against those films. Both are empty when the film list hasn't changed.
+
 If a listing is a set or collection and its description is cut off before the
 contents, open that listing's own page (its `url`) to read the full description.
 Besides these and the status check in `render.py` (step 7), fetch nothing else
@@ -57,7 +62,11 @@ from Marktplaats.
 
 ## 3. Match
 
-Compare every listing against `scout/films.txt`.
+Compare every listing in `listings` against `scout/films.txt`. Compare each
+listing in `recheck.listings` only against the films in `recheck.films`, and
+when one matches, list every `films.txt` film in it as usual. Matched rechecks
+go into `results.json` like any other find, and add their count to
+`listings_seen`.
 
 - **Be permissive.** Including a doubtful match costs the user a glance;
   missing a real one costs them the disc. When a listing might be the film,
@@ -146,12 +155,13 @@ Write `scout/results.json`:
    database, where the user hides ads they don't want.
 
 Even with zero matches, still render and publish, so the page shows this
-morning's date and the user can tell the run happened.
+run's date and the user can tell the run happened.
 
 ## 8. Report
 
 End with a short summary:
-- how many listings you read and how many matched
+- how many listings you read and how many matched, and how many were
+  rechecked against how many added films
 - how many earlier finds are now reserved or gone
 - the best two or three finds, sets first, with town and price
 - anything that went wrong, e.g. a failed search or a listing page that wouldn't load
