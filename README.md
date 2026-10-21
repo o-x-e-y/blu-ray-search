@@ -26,10 +26,11 @@ the routine nor a film-list refresh needs NixOS.
 
 ## Trash
 
-Each ad on the page has a trash button (click twice to confirm). Trashed ids go
-to the page's own database, a `trash` collection, and the page hides them
-until they sell or get reserved; the trash tab lists them with a restore
-button. The routine needs no part in it: a trashed ad stays tracked, so it is
+Each ad on the page has a trash button. Trashed ids go to the page's own
+database, a `trash` collection, and the page hides them until they sell or get
+reserved. The trash tab lists them, most recently trashed first, each with a
+restore button. Neither button asks for confirmation, since a mistake is one
+click to undo. The routine needs no part in it: a trashed ad stays tracked, so it is
 never offered as new again.
 
 ## Film list

@@ -72,7 +72,6 @@ section { display: grid; gap: 12px; }
   background: none; color: var(--muted); border: 1px solid var(--line); padding: 0 6px; cursor: pointer; }
 .can-trash .act { display: inline-block; }
 .act:hover { color: var(--fg); border-color: var(--fg); }
-.act.armed { background: var(--bad); color: var(--bg); border-color: var(--bad); }
 .act:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .note { font-size: .85rem; color: var(--muted); margin: 0; max-width: 70ch; }
 .empty { color: var(--muted); margin: 0; }
@@ -108,7 +107,7 @@ function show(id) {
 for (const tab of tabs) tab.addEventListener("click", () => show(tab.getAttribute("aria-controls")));
 try { const saved = localStorage.getItem("view"); if (saved !== "trash" && document.getElementById(saved)) show(saved); } catch {}
 
-let trash = null, trashed = new Set();
+let trash = null, trashed = new Map();
 const views = document.querySelectorAll("#by-seller, #by-film");
 
 function applyTrash() {
@@ -125,7 +124,7 @@ function applyTrash() {
       section.querySelector("h2 small").textContent = `[${n}]`;
     }
   }
-  const cards = [...trashed].map(id => document.querySelector(`#by-seller .item[data-id="${CSS.escape(id)}"]`))
+  const cards = [...trashed].sort((a, b) => b[1] - a[1]).map(([id]) => document.querySelector(`#by-seller .item[data-id="${CSS.escape(id)}"]`))
     .filter(Boolean).map(item => {
       const card = item.cloneNode(true);
       card.hidden = false;
@@ -138,24 +137,10 @@ function applyTrash() {
   document.getElementById("trash-n").textContent = `[${cards.length}]`;
 }
 
-function disarm(except) {
-  for (const b of document.querySelectorAll(".act.armed")) if (b !== except) {
-    b.classList.remove("armed");
-    b.textContent = b.dataset.act;
-  }
-}
-
 document.addEventListener("click", async e => {
   const b = e.target.closest(".act");
-  disarm(b);
   if (!b || !trash || b.disabled) return;
-  if (!b.classList.contains("armed")) {
-    b.classList.add("armed");
-    b.textContent = `confirm ${b.dataset.act}`;
-    return;
-  }
   b.disabled = true;
-  b.classList.remove("armed");
   const ref = trash.doc(b.closest(".item").dataset.id);
   try {
     if (b.dataset.act === "trash") await ref.set({ at: Date.now() });
@@ -171,7 +156,7 @@ document.addEventListener("click", async e => {
   if (!db) return;
   trash = db.collection("trash");
   trash.onSnapshot(snap => {
-    trashed = new Set(snap.docs.map(d => d.id));
+    trashed = new Map(snap.docs.map(d => [d.id, d.data()?.at ?? 0]));
     applyTrash();
   }, () => { trash = null; document.body.classList.remove("can-trash"); });
   document.body.classList.add("can-trash");
