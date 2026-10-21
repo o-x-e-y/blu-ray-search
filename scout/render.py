@@ -80,12 +80,17 @@ def tag_html(tag: str) -> str:
     return f'<span class="tag">{html.escape(tag)}</span>'
 
 
+def film_link(slug: str, title: str) -> str:
+    return (f'<a href="https://letterboxd.com/film/{html.escape(slug)}/" target="_blank" rel="noopener">'
+            f'{html.escape(title)}</a>')
+
+
 def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -> str:
     bits = []
     if chips:
         for slug in item["films"]:
             film = films.get(slug, {"title": slug, "tag": "?"})
-            bits.append(f'<span class="chip">{html.escape(film["title"])} {tag_html(film["tag"])}</span>')
+            bits.append(f'<span class="chip">{film_link(slug, film["title"])} {tag_html(film["tag"])}</span>')
     if (item.get("films_in_listing") or 1) >= 2:
         bits.append(f'<span class="chip dim">{item["films_in_listing"]} films in ad</span>')
     bits += [f'<span class="chip flag">{html.escape(f)}</span>' for f in item.get("flags", [])]
@@ -118,7 +123,7 @@ def by_film(items: list, films: dict, today: str) -> tuple[str, int]:
     for slug in sorted(groups, key=rank):
         film = films.get(slug, {"title": slug, "tag": "?"})
         cards = "".join(card(i, films, today, chips=False) for i in sorted(groups[slug], key=posted, reverse=True))
-        out.append(f'<div class="film"><h3>{html.escape(film["title"])} {tag_html(film["tag"])}</h3>{cards}</div>')
+        out.append(f'<div class="film"><h3>{film_link(slug, film["title"])} {tag_html(film["tag"])}</h3>{cards}</div>')
     return "".join(out), len(groups)
 
 
