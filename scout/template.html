@@ -26,6 +26,10 @@ header { display: grid; gap: 10px; }
 .lede { color: var(--muted); margin: 0; max-width: 70ch; font-size: .9rem; }
 .stats { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .9rem; color: var(--muted); }
 .stats b { color: var(--fg); }
+.rerun { justify-self: start; font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--fg); background: var(--surface); border: 1px solid var(--line); padding: 6px 14px; text-decoration: none; }
+.rerun:hover { border-color: var(--fg); }
+.rerun:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 section { display: grid; gap: 12px; }
 .list { display: grid; gap: 10px; }
 .item { background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; display: grid; gap: 6px; min-width: 0; }
@@ -80,6 +84,7 @@ section { display: grid; gap: 12px; }
     <h1>blu-ray-scout</h1>
     <p class="lede">New Marktplaats Blu-ray listings around Eindhoven, Helmond and home, matched against your Letterboxd films rated 4★ or higher and your watchlist. Reserved and sold listings are hidden. Checked __DATE__ at __TIME__.</p>
     <div class="stats">__STATS__</div>
+    <a class="rerun" href="https://claude.ai/code/routines/trig_01GNp5j5btNi3n82638H7Ut7" target="_blank" rel="noopener">rerun scout ↗</a>
   </header>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" aria-controls="by-seller" id="tab-by-seller">by seller</button>

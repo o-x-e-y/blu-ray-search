@@ -65,9 +65,12 @@ from Marktplaats.
 Compare every listing in `listings` against `scout/films.txt`. Compare each
 listing in `recheck.listings` only against the films in `recheck.films`, and
 when one matches, list every `films.txt` film in it as usual. Matched rechecks
-go into `results.json` like any other find, and add their count to
-`listings_seen`.
+go into `results.json` like any other find.
 
+- **Read every listing yourself.** Don't write a script that matches titles
+  against `films.txt`: it misses Dutch titles ("Hoe tem je een draak"), box
+  sets and lots that don't name every film, and it can't tell remakes apart.
+  With many listings, read them in batches of about 100.
 - **Be permissive.** Including a doubtful match costs the user a glance;
   missing a real one costs them the disc. When a listing might be the film,
   include it and say why it's doubtful in `note`.

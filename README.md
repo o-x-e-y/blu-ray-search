@@ -12,9 +12,9 @@ the routine nor a film-list refresh needs NixOS.
 ## Routine settings
 
 - **Prompt:** `Run the blu-ray-scout skill (.claude/skills/blu-ray-scout/SKILL.md).`
-- **Schedule:** none. Start a run from the routine's page whenever you want a
-  fresh list. A gap of any length is fine: every ad posted since the last
-  published run counts as new and gets a "new" badge.
+- **Schedule:** none. The page's "rerun scout" link opens the routine, where
+  "Run now" starts a fresh list. A gap of any length is fine: every ad posted
+  since the last published run counts as new and gets a "new" badge.
 - **Repository:** this one.
 - **Connectors:** only Claude Docs and Claude Code Remote. Gmail isn't needed:
   the saved-search emails only carry a count, not the listings.
