@@ -142,7 +142,8 @@ Write `scout/results.json`:
    the reservation falls through, and gone ones are dropped. Problems with
    single listings go to stderr; mention them in the report.
 2. Publish `scout/page.html` with the Artifact tool, `url` set to the page
-   above.
+   above. Don't pass `capabilities`: leaving it out keeps the page's trash
+   database, where the user hides ads they don't want.
 
 Even with zero matches, still render and publish, so the page shows this
 morning's date and the user can tell the run happened.

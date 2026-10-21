@@ -96,7 +96,7 @@ def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -
         badges += '<span class="badge detour">detour</span>'
     note = f'<p class="note">{html.escape(item["note"])}</p>' if item.get("note") else ""
     chips_html = f'<div class="chips">{"".join(bits)}</div>' if bits else ""
-    return f"""<div class="item"><div class="row"><a href="{html.escape(item["url"].split("?")[0])}" target="_blank" rel="noopener">{badges}{html.escape(item["title"])}</a><span class="price">{html.escape(item["price"])}</span></div>
+    return f"""<div class="item" data-id="{html.escape(item["id"])}"><div class="row"><a href="{html.escape(item["url"].split("?")[0])}" target="_blank" rel="noopener">{badges}{html.escape(item["title"])}</a><span class="end"><span class="price">{html.escape(item["price"])}</span><button class="act" type="button" data-act="trash">trash</button></span></div>
 {chips_html}<div class="where">{html.escape(item["town"])}</div>{note}</div>"""
 
 

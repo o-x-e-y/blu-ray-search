@@ -23,6 +23,14 @@ the routine nor a film-list refresh needs NixOS.
 - **Model:** Haiku. It matched as well as Sonnet on the 2026-10-16 test; switch
   to Sonnet if it misses things.
 
+## Trash
+
+Each ad on the page has a trash button (click twice to confirm). Trashed ids go
+to the page's own database, a `trash` collection, and the page hides them
+until they sell or get reserved; the trash tab lists them with a restore
+button. The routine needs no part in it: a trashed ad stays tracked, so it is
+never offered as new again.
+
 ## Film list
 
 Letterboxd's Cloudflare blocks `boxd` from the routine's cloud IP, so the routine
