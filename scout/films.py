@@ -15,8 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 USER = "oxey"
-# Slug of the public Letterboxd list of discs already owned; None until it exists.
-OWNED_LIST = None
+OWNED_LIST = "movies-i-own"
 
 
 def boxd(*args: str) -> list[dict]:
@@ -32,7 +31,7 @@ def boxd(*args: str) -> list[dict]:
 
 
 def main() -> None:
-    owned = {f["slug"] for f in boxd("list", OWNED_LIST)} if OWNED_LIST else set()
+    owned = {f["slug"] for f in boxd("list", OWNED_LIST)}
     lines = []
     for film in boxd("ratings"):
         if (film["rating"] or 0) >= 4 and film["slug"] not in owned:

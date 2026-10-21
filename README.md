@@ -36,6 +36,6 @@ git commit -m "Refresh film list" scout/films.txt && git push
 
 ## Owned discs
 
-Once the Letterboxd list of owned discs exists, set `OWNED_LIST` in
-`scout/films.py` to its slug. That needs the `boxd list` command pushed to the
-nixos repo first.
+`scout/films.py` leaves out every film on the Letterboxd list
+[Movies I own](https://letterboxd.com/oxey/list/movies-i-own/). After adding a
+disc there, refresh the film list as above.

@@ -4,6 +4,7 @@ anora | Anora (2024) | rated 5.0
 blue-heron | Blue Heron (2025) | rated 5.0
 chernobyl | Chernobyl (2019) | rated 5.0
 coco-2017 | Coco (2017) | rated 5.0
+coyote-vs-acme | Coyote vs. Acme (2026) | rated 5.0
 dead-poets-society | Dead Poets Society (1989) | rated 5.0
 django-unchained | Django Unchained (2012) | rated 5.0
 dune-part-two | Dune: Part Two (2024) | rated 5.0
@@ -12,7 +13,6 @@ goodfellas | GoodFellas (1990) | rated 5.0
 hamnet | Hamnet (2025) | rated 5.0
 im-still-here-2024 | I'm Still Here (2024) | rated 5.0
 in-the-mood-for-love | In the Mood for Love (2000) | rated 5.0
-inception | Inception (2010) | rated 5.0
 its-a-wonderful-life | It's a Wonderful Life (1946) | rated 5.0
 kikis-delivery-service | Kiki's Delivery Service (1989) | rated 5.0
 marty-supreme | Marty Supreme (2025) | rated 5.0
@@ -26,7 +26,6 @@ pulp-fiction | Pulp Fiction (1994) | rated 5.0
 sentimental-value-2025 | Sentimental Value (2025) | rated 5.0
 sing-sing-2023 | Sing Sing (2023) | rated 5.0
 spider-man-across-the-spider-verse | Spider-Man: Across the Spider-Verse (2023) | rated 5.0
-strange-darling | Strange Darling (2023) | rated 5.0
 the-apartment | The Apartment (1960) | rated 5.0
 the-dark-knight-rises | The Dark Knight Rises (2012) | rated 5.0
 the-favourite | The Favourite (2018) | rated 5.0
@@ -48,7 +47,6 @@ batman-begins | Batman Begins (2005) | rated 4.5
 black-bag-2025 | Black Bag (2025) | rated 4.5
 blue-moon-2025 | Blue Moon (2025) | rated 4.5
 boogie-nights | Boogie Nights (1997) | rated 4.5
-boyhood | Boyhood (2014) | rated 4.5
 brokeback-mountain | Brokeback Mountain (2005) | rated 4.5
 bugonia | Bugonia (2025) | rated 4.5
 clueless | Clueless (1995) | rated 4.5
@@ -64,6 +62,7 @@ how-to-train-your-dragon-2025 | How to Train Your Dragon (2025) | rated 4.5
 i-swear | I Swear (2025) | rated 4.5
 inside-out-2015 | Inside Out (2015) | rated 4.5
 interstellar | Interstellar (2014) | rated 4.5
+kokuho | Kokuho (2025) | rated 4.5
 la-la-land | La La Land (2016) | rated 4.5
 little-miss-sunshine | Little Miss Sunshine (2006) | rated 4.5
 little-women-2019 | Little Women (2019) | rated 4.5
@@ -117,7 +116,6 @@ american-psycho | American Psycho (2000) | rated 4.0
 apocalypse-now | Apocalypse Now (1979) | rated 4.0
 arco | Arco (2025) | rated 4.0
 arrival-2016 | Arrival (2016) | rated 4.0
-avatar | Avatar (2009) | rated 4.0
 barbie | Barbie (2023) | rated 4.0
 better-man-2024 | Better Man (2024) | rated 4.0
 birdman-or-the-unexpected-virtue-of-ignorance | Birdman or (The Unexpected Virtue of Ignorance) (2014) | rated 4.0
@@ -154,14 +152,12 @@ i-saw-the-tv-glow | I Saw the TV Glow (2024) | rated 4.0
 inside-out-2-2024 | Inside Out 2 (2024) | rated 4.0
 it-was-just-an-accident | It Was Just an Accident (2025) | rated 4.0
 jaws | Jaws (1975) | rated 4.0
-joker-2019 | Joker (2019) | rated 4.0
 just-the-two-of-us-2023-1 | Just the Two of Us (2023) | rated 4.0
 lady-bird | Lady Bird (2017) | rated 4.0
 legally-blonde | Legally Blonde (2001) | rated 4.0
 leviticus-2026 | Leviticus (2026) | rated 4.0
 longlegs | Longlegs (2024) | rated 4.0
 love-lies-bleeding-2024 | Love Lies Bleeding (2024) | rated 4.0
-mad-max-fury-road | Mad Max: Fury Road (2015) | rated 4.0
 manchester-by-the-sea | Manchester by the Sea (2016) | rated 4.0
 masters-of-the-universe-2026 | Masters of the Universe (2026) | rated 4.0
 mean-girls | Mean Girls (2004) | rated 4.0
@@ -208,6 +204,7 @@ the-furious | The Furious (2025) | rated 4.0
 the-good-the-bad-and-the-ugly | The Good, the Bad and the Ugly (1966) | rated 4.0
 the-grand-budapest-hotel | The Grand Budapest Hotel (2014) | rated 4.0
 the-hunger-games-mockingjay-part-1 | The Hunger Games: Mockingjay – Part 1 (2014) | rated 4.0
+the-incomer | The Incomer (2026) | rated 4.0
 the-last-journey-2024 | The Last Journey (2024) | rated 4.0
 the-lighthouse-2019 | The Lighthouse (2019) | rated 4.0
 the-long-walk-2025 | The Long Walk (2025) | rated 4.0
@@ -225,6 +222,8 @@ tuner | Tuner (2025) | rated 4.0
 warfare | Warfare (2025) | rated 4.0
 wicked-for-good | Wicked: For Good (2025) | rated 4.0
 zootopia-2 | Zootopia 2 (2025) | rated 4.0
+you-can-see-everything | You Can See Everything (2026) | watchlist
+love-letter | Love Letter (1995) | watchlist
 nostalgia-1983 | Nostalgia (1983) | watchlist
 ivans-childhood | Ivan's Childhood (1962) | watchlist
 the-sacrifice | The Sacrifice (1986) | watchlist
@@ -236,7 +235,6 @@ youri | Youri (2026) | watchlist
 some-kind-of-heaven | Some Kind of Heaven (2020) | watchlist
 a-face-in-the-crowd | A Face in the Crowd (1957) | watchlist
 revenant-2023 | Revenant (2023) | watchlist
-naza | NAZA (2026) | watchlist
 the-last-10-years | The Last 10 Years (2022) | watchlist
 quo-vadis-aida | Quo Vadis, Aida? (2020) | watchlist
 la-bola-negra | La Bola Negra (2026) | watchlist
@@ -320,7 +318,6 @@ homebound-2025 | Homebound (2025) | watchlist
 sunshine-2024 | Sunshine (2024) | watchlist
 sore-a-wife-from-the-future | Sore: A Wife from the Future (2025) | watchlist
 little-amelie-or-the-character-of-rain | Little Amélie or the Character of Rain (2025) | watchlist
-kokuho | Kokuho (2025) | watchlist
 little-trouble-girls | Little Trouble Girls (2025) | watchlist
 school-of-rock | School of Rock (2003) | watchlist
 wanda | Wanda (1970) | watchlist
@@ -411,7 +408,6 @@ three-colours-blue | Three Colours: Blue (1993) | watchlist
 three-colours-red | Three Colours: Red (1994) | watchlist
 apollo-10-a-space-age-childhood | Apollo 10½: A Space Age Childhood (2022) | watchlist
 licorice-pizza | Licorice Pizza (2021) | watchlist
-the-game | The Game (1997) | watchlist
 mary-poppins | Mary Poppins (1964) | watchlist
 life-of-pi | Life of Pi (2012) | watchlist
 revenge-2017 | Revenge (2017) | watchlist
@@ -649,7 +645,6 @@ juno | Juno (2007) | watchlist
 the-double-2013 | The Double (2013) | watchlist
 a-different-man | A Different Man (2024) | watchlist
 point-break | Point Break (1991) | watchlist
-the-fast-and-the-furious-2001 | The Fast and the Furious (2001) | watchlist
 the-aviator | The Aviator (2004) | watchlist
 dogtooth | Dogtooth (2009) | watchlist
 atonement | Atonement (2007) | watchlist
