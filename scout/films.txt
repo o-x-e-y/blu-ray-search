@@ -11,6 +11,7 @@ dune-part-two | Dune: Part Two (2024) | rated 5.0
 frankenstein-2025 | Frankenstein (2025) | rated 5.0
 goodfellas | GoodFellas (1990) | rated 5.0
 hamnet | Hamnet (2025) | rated 5.0
+how-to-train-your-dragon | How to Train Your Dragon (2010) | rated 5.0
 im-still-here-2024 | I'm Still Here (2024) | rated 5.0
 in-the-mood-for-love | In the Mood for Love (2000) | rated 5.0
 its-a-wonderful-life | It's a Wonderful Life (1946) | rated 5.0
@@ -108,6 +109,7 @@ there-will-be-blood | There Will Be Blood (2007) | rated 4.5
 train-dreams | Train Dreams (2025) | rated 4.5
 whiplash-2014 | Whiplash (2014) | rated 4.5
 whisper-of-the-heart | Whisper of the Heart (1995) | rated 4.5
+wild-horse-nine | Wild Horse Nine (2026) | rated 4.5
 10-things-i-hate-about-you | 10 Things I Hate About You (1999) | rated 4.0
 a-complete-unknown | A Complete Unknown (2024) | rated 4.0
 a-little-something-extra | A Little Something Extra (2024) | rated 4.0
@@ -134,6 +136,7 @@ calle-malaga | Calle Malaga (2025) | rated 4.0
 catch-me-if-you-can-2002 | Catch Me If You Can (2002) | rated 4.0
 challengers | Challengers (2024) | rated 4.0
 civil-war-2024 | Civil War (2024) | rated 4.0
+cunk-on-life | Cunk on Life (2024) | rated 4.0
 dear-you-2026 | Dear You (2026) | rated 4.0
 die-hard | Die Hard (1988) | rated 4.0
 eternity-2025-1 | Eternity (2025) | rated 4.0
@@ -183,6 +186,7 @@ rental-family-2025 | Rental Family (2025) | rated 4.0
 resurrection-2025 | Resurrection (2025) | rated 4.0
 rushmore | Rushmore (1998) | rated 4.0
 send-help | Send Help (2026) | rated 4.0
+sense-and-sensibility-2026 | Sense and Sensibility (2026) | rated 4.0
 sisu-2022 | Sisu (2022) | rated 4.0
 small-things-like-these | Small Things Like These (2024) | rated 4.0
 sorry-baby-2025 | Sorry, Baby (2025) | rated 4.0
@@ -217,11 +221,19 @@ the-spongebob-movie-search-for-squarepants | The SpongeBob Movie: Search for Squ
 the-squid-and-the-whale | The Squid and the Whale (2005) | rated 4.0
 the-ties-that-bind-us | The Ties That Bind Us (2024) | rated 4.0
 the-witch-2015 | The Witch (2015) | rated 4.0
+the-wolf-of-wall-street | The Wolf of Wall Street (2013) | rated 4.0
 truly-naked | Truly Naked (2026) | rated 4.0
 tuner | Tuner (2025) | rated 4.0
 warfare | Warfare (2025) | rated 4.0
 wicked-for-good | Wicked: For Good (2025) | rated 4.0
+wildwood-2026 | Wildwood (2026) | rated 4.0
 zootopia-2 | Zootopia 2 (2025) | rated 4.0
+gayniggers-from-outer-space | Gayniggers from Outer Space (1993) | watchlist
+if-beale-street-could-talk | If Beale Street Could Talk (2018) | watchlist
+where-the-wild-things-are | Where the Wild Things Are (2009) | watchlist
+moonstruck | Moonstruck (1987) | watchlist
+cunk-on-earth | Cunk on Earth (2022) | watchlist
+the-devils | The Devils (1971) | watchlist
 you-can-see-everything | You Can See Everything (2026) | watchlist
 love-letter | Love Letter (1995) | watchlist
 nostalgia-1983 | Nostalgia (1983) | watchlist
@@ -517,7 +529,6 @@ velvet-goldmine | Velvet Goldmine (1998) | watchlist
 dark-waters-2019 | Dark Waters (2019) | watchlist
 carol-2015 | Carol (2015) | watchlist
 madame-1988 | Madame (1988) | watchlist
-cunk-on-life | Cunk on Life (2024) | watchlist
 pieces-of-a-woman | Pieces of a Woman (2020) | watchlist
 eddington | Eddington (2025) | watchlist
 talladega-nights-the-ballad-of-ricky-bobby | Talladega Nights: The Ballad of Ricky Bobby (2006) | watchlist
@@ -688,7 +699,6 @@ the-girl-with-the-dragon-tattoo-2011 | The Girl with the Dragon Tattoo (2011) | 
 superbad | Superbad (2007) | watchlist
 howls-moving-castle | Howl's Moving Castle (2004) | watchlist
 hereditary | Hereditary (2018) | watchlist
-the-wolf-of-wall-street | The Wolf of Wall Street (2013) | watchlist
 her | Her (2013) | watchlist
 zoolander | Zoolander (2001) | watchlist
 sometimes-i-think-about-dying-2023 | Sometimes I Think About Dying (2023) | watchlist
@@ -743,7 +753,6 @@ come-and-see | Come and See (1985) | watchlist
 12-years-a-slave | 12 Years a Slave (2013) | watchlist
 leptirica | Leptirica (1973) | watchlist
 pocahontas | Pocahontas (1995) | watchlist
-the-texas-chain-saw-massacre | The Texas Chain Saw Massacre (1974) | watchlist
 late-night-with-the-devil | Late Night with the Devil (2023) | watchlist
 bird-2024 | Bird (2024) | watchlist
 the-iron-claw-2023 | The Iron Claw (2023) | watchlist
