@@ -145,6 +145,7 @@ fabula-2025 | Fabula (2025) | rated 4.0
 familiar-touch | Familiar Touch (2024) | rated 4.0
 flow-2024 | Flow (2024) | rated 4.0
 gail-daughtry-and-the-celebrity-sex-pass | Gail Daughtry and the Celebrity Sex Pass (2026) | rated 4.0
+godzilla-minus-one | Godzilla Minus One (2023) | rated 4.0
 good-luck-have-fun-dont-die | Good Luck, Have Fun, Don't Die (2025) | rated 4.0
 hell-or-high-water | Hell or High Water (2016) | rated 4.0
 hit-man-2023 | Hit Man (2023) | rated 4.0
@@ -184,6 +185,7 @@ priscilla | Priscilla (2023) | rated 4.0
 rafiki-2018 | Rafiki (2018) | rated 4.0
 rental-family-2025 | Rental Family (2025) | rated 4.0
 resurrection-2025 | Resurrection (2025) | rated 4.0
+rocky | Rocky (1976) | rated 4.0
 rushmore | Rushmore (1998) | rated 4.0
 send-help | Send Help (2026) | rated 4.0
 sense-and-sensibility-2026 | Sense and Sensibility (2026) | rated 4.0
@@ -225,9 +227,16 @@ the-wolf-of-wall-street | The Wolf of Wall Street (2013) | rated 4.0
 truly-naked | Truly Naked (2026) | rated 4.0
 tuner | Tuner (2025) | rated 4.0
 warfare | Warfare (2025) | rated 4.0
+when-harry-met-sally | When Harry Met Sally... (1989) | rated 4.0
 wicked-for-good | Wicked: For Good (2025) | rated 4.0
 wildwood-2026 | Wildwood (2026) | rated 4.0
 zootopia-2 | Zootopia 2 (2025) | rated 4.0
+rrr | RRR (2022) | watchlist
+my-own-private-idaho | My Own Private Idaho (1991) | watchlist
+whats-up-doc-1972 | What's Up, Doc? (1972) | watchlist
+cure | Cure (1997) | watchlist
+pacific-rim | Pacific Rim (2013) | watchlist
+paul-blart-mall-cop | Paul Blart: Mall Cop (2009) | watchlist
 gayniggers-from-outer-space | Gayniggers from Outer Space (1993) | watchlist
 if-beale-street-could-talk | If Beale Street Could Talk (2018) | watchlist
 where-the-wild-things-are | Where the Wild Things Are (2009) | watchlist
@@ -278,7 +287,6 @@ aguirre-the-wrath-of-god | Aguirre, the Wrath of God (1972) | watchlist
 her-private-hell-2026 | Her Private Hell (2026) | watchlist
 the-funeral-1996 | The Funeral (1996) | watchlist
 mysterious-skin | Mysterious Skin (2004) | watchlist
-fjord-2026 | Fjord (2026) | watchlist
 remarkably-bright-creatures | Remarkably Bright Creatures (2026) | watchlist
 luca-2021 | Luca (2021) | watchlist
 the-other-guys | The Other Guys (2010) | watchlist
@@ -289,7 +297,6 @@ ida | Ida (2013) | watchlist
 clarissa-2026 | Clarissa (2026) | watchlist
 club-kid | Club Kid (2026) | watchlist
 hope-2026 | Hope (2026) | watchlist
-fatherland-2026 | Fatherland (2026) | watchlist
 is-god-is | Is God Is (2026) | watchlist
 all-of-a-sudden-2026 | All of a Sudden (2026) | watchlist
 bringing-up-baby | Bringing Up Baby (1938) | watchlist
@@ -379,7 +386,6 @@ addams-family-values | Addams Family Values (1993) | watchlist
 wuthering-heights-2026 | Wuthering Heights (2026) | watchlist
 double-indemnity | Double Indemnity (1944) | watchlist
 night-at-the-museum | Night at the Museum (2006) | watchlist
-when-harry-met-sally | When Harry Met Sally... (1989) | watchlist
 amelie | Amélie (2001) | watchlist
 the-lovers-on-the-bridge | The Lovers on the Bridge (1991) | watchlist
 lesbian-space-princess | Lesbian Space Princess (2025) | watchlist
@@ -760,4 +766,3 @@ close-your-eyes-2023 | Close Your Eyes (2023) | watchlist
 society-of-the-snow | Society of the Snow (2023) | watchlist
 killers-of-the-flower-moon | Killers of the Flower Moon (2023) | watchlist
 monster-2023 | Monster (2023) | watchlist
-godzilla-minus-one | Godzilla Minus One (2023) | watchlist
