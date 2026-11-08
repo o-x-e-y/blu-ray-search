@@ -55,6 +55,27 @@ The page stores the film list it was matched against, so the next run also
 checks every ad it has seen before against the films added since, and drops
 earlier finds whose films have left the list.
 
+## Nationwide page
+
+`scout/nationwide.py` builds a separate page,
+[Blu-ray Scout NL](https://claude.ai/artifact/UERvaf3zJKw78nA577eTGM), from
+every Blu-ray on Marktplaats, run by hand rather than by the routine. It only
+reads `films.txt` and `render.py`/`template.html`, and keeps its own files in
+the gitignored `scout/nl/`, so it never touches the routine's `listings.json`,
+`results.json` or page.
+
+```bash
+scout/.venv/bin/python scout/nationwide.py fetch    # ~1,300 search requests, ~45 minutes, cached
+# one agent per scout/nl/chunk-*.txt, following scout/nationwide-brief.md
+scout/.venv/bin/python scout/nationwide.py merge
+scout/.venv/bin/python scout/nationwide.py full     # one page per cut-off set
+# one agent on scout/nl/full.txt, then merge again
+scout/.venv/bin/python scout/nationwide.py render
+```
+
+Haiku matches well enough for this and costs far less than Sonnet on 40
+chunks of 1,000 ads.
+
 ## Owned discs
 
 `scout/films.py` leaves out every film on the Letterboxd list
