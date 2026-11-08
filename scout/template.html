@@ -120,7 +120,7 @@ const range = [document.getElementById("price-min"), document.getElementById("pr
 function euros(item) {
   const text = item.querySelector(".price").textContent;
   if (text === "gratis") return 0;
-  const found = text.match(/€(\d+(?:,\d+)?)/);
+  const found = text.match(/€(\d+(?:[.,]\d+)?)/);
   return found ? parseFloat(found[1].replace(",", ".")) : null;
 }
 
