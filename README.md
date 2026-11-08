@@ -81,3 +81,10 @@ chunks of 1,000 ads.
 `scout/films.py` leaves out every film on the Letterboxd list
 [Movies I own](https://letterboxd.com/oxey/list/movies-i-own/). After adding a
 disc there, refresh the film list as above.
+
+## Wanted for someone else
+
+`scout/wanted.txt` adds films that are neither rated 4★+ nor on the watchlist,
+such as a friend's favourite, one per line in the `films.txt` format with any
+tag (`the-life-of-chuck | The Life of Chuck (2024) | for a friend`). Refresh the
+film list after editing it.

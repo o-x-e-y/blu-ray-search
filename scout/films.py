@@ -3,8 +3,10 @@
 
     slug | Title (year) | rated 4.5
     slug | Title (year) | watchlist
+    slug | Title (year) | for a friend
 
-Films rated 4.0 or higher plus the watchlist, minus anything on the owned list.
+Films rated 4.0 or higher, the watchlist and wanted.txt (films wanted for some
+other reason, in this same format), minus anything on the owned list.
 Run it on the user's machine: Letterboxd's Cloudflare blocks cloud IPs.
 """
 import json
@@ -39,6 +41,10 @@ def main() -> None:
     for film in boxd("watchlist"):
         if film["slug"] not in owned:
             lines.append(f"{film['slug']} | {film['title']} ({film['year']}) | watchlist")
+    listed = {line.split(" | ")[0] for line in lines}
+    for line in (HERE / "wanted.txt").read_text().splitlines():
+        if line.split(" | ")[0] not in listed | owned:
+            lines.append(line)
     (HERE / "films.txt").write_text("\n".join(lines) + "\n")
     print(f"{len(lines)} films written")
 

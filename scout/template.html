@@ -67,6 +67,10 @@ section { display: grid; gap: 12px; }
 .tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .tabs button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .panel { display: grid; gap: 36px; }
+.filter { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; font-size: .9rem; color: var(--muted); margin-top: -18px; }
+.filter label { display: inline-flex; gap: 4px; align-items: baseline; }
+.filter input { font: inherit; width: 7ch; background: var(--surface); color: var(--fg); border: 1px solid var(--line); padding: 2px 6px; }
+.filter input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 [hidden] { display: none !important; }
 .act { display: none; font: inherit; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   background: none; color: var(--muted); border: 1px solid var(--line); padding: 0 6px; cursor: pointer; }
@@ -90,6 +94,7 @@ section { display: grid; gap: 12px; }
     <button role="tab" aria-selected="false" aria-controls="by-film" id="tab-by-film">by film</button>
     <button role="tab" aria-selected="false" aria-controls="trash" id="tab-trash" hidden>trash <span id="trash-n"></span></button>
   </div>
+  <div class="filter"><label>price €<input id="price-min" type="number" min="0" inputmode="decimal" placeholder="min"></label><label>to €<input id="price-max" type="number" min="0" inputmode="decimal" placeholder="max"></label><span>ads without a price stay in</span></div>
   <div class="panel" role="tabpanel" id="by-seller" aria-labelledby="tab-by-seller">__BY_SELLER__</div>
   <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden>__BY_FILM__</div>
   <div class="panel" role="tabpanel" id="trash" aria-labelledby="tab-trash" hidden><section><h2>Trash</h2><p class="note">Ads you've trashed, hidden from the other views. One that sells or gets reserved disappears from here too.</p><div class="list" id="trash-list"></div></section></div>
@@ -110,9 +115,24 @@ try { const saved = localStorage.getItem("view"); if (saved !== "trash" && docum
 let trash = null, trashed = new Map();
 const views = document.querySelectorAll("#by-seller, #by-film");
 
-function applyTrash() {
+const range = [document.getElementById("price-min"), document.getElementById("price-max")];
+
+function euros(item) {
+  const text = item.querySelector(".price").textContent;
+  if (text === "gratis") return 0;
+  const found = text.match(/€(\d+(?:,\d+)?)/);
+  return found ? parseFloat(found[1].replace(",", ".")) : null;
+}
+
+function fits(item) {
+  const price = euros(item);
+  const [low, high] = range.map(input => parseFloat(input.value));
+  return price === null || !(price < low || price > high);
+}
+
+function apply() {
   for (const view of views) {
-    for (const item of view.querySelectorAll(".item")) item.hidden = trashed.has(item.dataset.id);
+    for (const item of view.querySelectorAll(".item")) item.hidden = trashed.has(item.dataset.id) || !fits(item);
     for (const group of view.querySelectorAll(".film")) {
       const n = group.querySelectorAll(".item:not([hidden])").length;
       group.hidden = n === 0;
@@ -152,12 +172,19 @@ document.addEventListener("click", async e => {
   b.disabled = false;
 });
 
+try { JSON.parse(localStorage.getItem("price") || "[]").forEach((v, i) => range[i].value = v); } catch {}
+for (const input of range) input.addEventListener("input", () => {
+  apply();
+  try { localStorage.setItem("price", JSON.stringify(range.map(i => i.value))); } catch {}
+});
+if (range.some(i => i.value)) apply();
+
 (window.claude ? claude.use("db") : Promise.resolve(null)).then(db => {
   if (!db) return;
   trash = db.collection("trash");
   trash.onSnapshot(snap => {
     trashed = new Map(snap.docs.map(d => [d.id, d.data()?.at ?? 0]));
-    applyTrash();
+    apply();
   }, () => { trash = null; document.body.classList.remove("can-trash"); });
   document.body.classList.add("can-trash");
   document.getElementById("tab-trash").hidden = false;

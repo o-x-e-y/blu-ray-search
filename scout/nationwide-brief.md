@@ -11,8 +11,9 @@ fetch anything from the web, don't edit any file except your output file.
 
 - The film list: `/home/oxey/Repos/blu-ray-search/scout/films.txt`, one film
   per line: `slug | Title (year) | rated 4.5` (a film they loved) or
-  `slug | Title (year) | watchlist` (a film they want to see). Read all of it
-  first (about 770 lines) and keep it in mind.
+  `slug | Title (year) | watchlist` (a film they want to see), or another tag
+  such as `for a friend` (wanted for another reason, treat it like the
+  watchlist). Read all of it first (about 770 lines) and keep it in mind.
 - Your ad chunks (listed in your task), one ad per line:
   `id | ad title | description` (the description is cut off around 250
   characters). Read every line of every chunk, in pieces of about 250 lines.

@@ -346,13 +346,16 @@ def render_page() -> None:
     sets = sorted((i for i in matched if (i.get("films_in_listing") or 1) >= 2),
                   key=lambda i: (-best(i), -len(i["films"]), far(i)))
     singles = [i for i in matched if i not in sets]
+    watchlisted = lambda i: any(films[s]["tag"] == "watchlist" for s in i["films"])
     seen, seen_n = by_film([i for i in singles if best(i) > 0], films, today)
-    wanted, wanted_n = by_film([i for i in singles if best(i) == 0], films, today)
+    wanted, wanted_n = by_film([i for i in singles if best(i) == 0 and watchlisted(i)], films, today)
+    extra, extra_n = by_film([i for i in singles if best(i) == 0 and not watchlisted(i)], films, today)
     lots = sorted((i for i in items if not i["films"]), key=far)
 
     sections = "".join([
         render.section("Seen", seen, seen_n, "Films you rated 4★ or higher, best-rated first. Within a film, ads near home first."),
         render.section("Watchlisted", wanted, wanted_n, "Films on your watchlist."),
+        render.section("Also wanted", extra, extra_n, "Films from wanted.txt, wanted for another reason."),
         render.section("Sets", "".join(card(i, films, today, chips=True) for i in sets), len(sets)),
         render.section("Collections to look into", "".join(card(i, films, today, chips=False) for i in lots), len(lots),
                        "Big lots whose ads don't list every title."),
@@ -374,8 +377,8 @@ def render_page() -> None:
     near = sum(far(i) <= NEAR_KM for i in items)
     stats = (f'<span>listings read <b>{results["listings_seen"]}</b></span><span>matched <b>{len(items)}</b></span>'
              f'<span>within {NEAR_KM} km <b>{near}</b></span><span>sellers <b>{len(groups)}</b></span>')
-    lede = (f"Every Blu-ray listed on Marktplaats, matched against your Letterboxd films rated 4★ or higher and your "
-            f"watchlist. Ads within {NEAR_KM} km of home are marked; far ads that can only be picked up are flagged. "
+    lede = (f"Every Blu-ray listed on Marktplaats, matched against your Letterboxd films rated 4★ or higher, your "
+            f"watchlist and the films you want for someone else. Ads within {NEAR_KM} km of home are marked; far ads that can only be picked up are flagged. "
             f"Reserved listings are left out. Listings fetched {today}.")
     page_ = (HERE / "template.html").read_text()
     page_ = page_.replace("<title>Blu-ray Scout</title>", "<title>Blu-ray Scout NL</title>")
@@ -388,7 +391,7 @@ def render_page() -> None:
         page_ = page_.replace(key, value)
     (OUT / "page.html").write_text(page_)
     print(f"page.html: {len(items)} finds, {len(sets)} sets, {seen_n} seen and {wanted_n} watchlisted films, "
-          f"{len(lots)} lots, {near} within {NEAR_KM} km")
+          f"{extra_n} also wanted, {len(lots)} lots, {near} within {NEAR_KM} km")
 
 
 if __name__ == "__main__":

@@ -22,7 +22,9 @@ git log -1 --format=%cs -- scout/films.txt
 ```
 
 `scout/films.txt` is the film list, one film per line: `slug | Title (year) | rated 4.5`
-for films they love, `| watchlist` for films they want to see. Films already
+for films they love, `| watchlist` for films they want to see, and any other
+tag, such as `| for a friend`, for films wanted for another reason; treat those
+like watchlist films. Films already
 owned are left out. The user generates it on their own machine, because
 Letterboxd's Cloudflare blocks cloud IPs, so don't run `scout/films.py` or
 contact Letterboxd. Mention the list's commit date (the `git log` line) in the
@@ -100,6 +102,7 @@ listing only if one of these holds:
 - it has a film rated 5★
 - it's a set with two or more matched films
 - it has a watchlist film the user would really want
+- it has a film tagged anything other than `rated` or `watchlist`
 
 For a watchlist film, judge from `scout/vendor/taste.md`: a director they
 follow, the kind of film they rate highly. Write the reason in `note`, e.g.
