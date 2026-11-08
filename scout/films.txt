@@ -31,7 +31,6 @@ the-apartment | The Apartment (1960) | rated 5.0
 the-dark-knight-rises | The Dark Knight Rises (2012) | rated 5.0
 the-favourite | The Favourite (2018) | rated 5.0
 the-handmaiden | The Handmaiden (2016) | rated 5.0
-the-shawshank-redemption | The Shawshank Redemption (1994) | rated 5.0
 the-sheep-detectives | The Sheep Detectives (2026) | rated 5.0
 the-social-network | The Social Network (2010) | rated 5.0
 the-spongebob-squarepants-movie | The SpongeBob SquarePants Movie (2004) | rated 5.0
@@ -114,7 +113,6 @@ wild-horse-nine | Wild Horse Nine (2026) | rated 4.5
 a-complete-unknown | A Complete Unknown (2024) | rated 4.0
 a-little-something-extra | A Little Something Extra (2024) | rated 4.0
 a-sad-and-beautiful-world | A Sad and Beautiful World (2025) | rated 4.0
-american-psycho | American Psycho (2000) | rated 4.0
 apocalypse-now | Apocalypse Now (1979) | rated 4.0
 arco | Arco (2025) | rated 4.0
 arrival-2016 | Arrival (2016) | rated 4.0
