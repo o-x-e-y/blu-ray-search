@@ -13,8 +13,9 @@ The page also stores the film list it was matched against. Films added to
 films.txt since then go in recheck, with every listing that isn't new, so ads
 seen before get matched against them too.
 
-It also searches the whole country for 4K Blu-ray players and keeps the ones
-whose title or description names a 4K model. "4K upscaling" players can't play
+It also reads every Blu-ray player listed in the country (about 350, four
+requests) and keeps the ones whose title or description names a 4K model. A
+"4k" text search would miss ads like "Panasonic DP-UB150 Blu-Ray Speler". "4K upscaling" players can't play
 4K discs, so the pattern looks for model names rather than "4K".
 """
 import json
@@ -35,10 +36,9 @@ SEARCHES = [("5611AC", 8000), ("5701RJ", 8000), ("5735SZ", 6000)]  # Eindhoven, 
 PAGE = 100
 DISCS = {"l1CategoryId": 1744, "l2CategoryIds": 1745}
 PLAYERS = {"l1CategoryId": 31, "l2CategoryIds": 2665}
-PLAYER_QUERIES = ["4k", "uhd"]
 MONTHS = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
 UHD = re.compile(r"\b(?:dp|dmp|dmr)[- ]?ub|\bubp[- ]?x\d|\bubk\d|\bubd[- ]?[km]?\d|\budp[- ]?(?:lx)?\d|\bubr[- ]?x\d|\bup970\b"
-                 r"|\bbdp[- ]?750\d|ultra[- ]?hd blu|uhd blu|4k uhd (?:blu|speler|player)", re.I)
+                 r"|\bbdp[- ]?750[12]|ultra[- ]?hd blu|uhd blu|4k uhd (?:blu|speler|player)", re.I)
 
 
 def posted(text: str, today: date) -> str:
@@ -89,12 +89,9 @@ def entry(l: dict) -> dict:
 
 
 def players() -> list[dict]:
-    found = {}
-    for q in PLAYER_QUERIES:
-        found |= {l["itemId"]: l for l in search({**PLAYERS, "query": q})}
     return [entry(l) | {"delivery": next((a["value"] for a in l.get("attributes", []) if a["key"] == "delivery"), ""),
                         "since": posted(l.get("date", ""), date.today())}
-            for l in found.values()
+            for l in search(PLAYERS)
             if UHD.search(f'{l["title"]} {l.get("description", "")}') and not l.get("reserved")
             and not l["title"].lower().startswith("gezocht")]
 

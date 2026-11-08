@@ -44,7 +44,7 @@ holding the current page; you need it here and in step 7.
 scout/.venv/bin/python scout/fetch.py <saved page file>
 ```
 
-This runs the three area searches and two 4K player searches without logging
+This runs the three area searches and the 4K player search without logging
 in and writes `scout/listings.json`.
 The page stores which listings the last published run saw, so `listings` holds
 only the ones posted since, and nothing is missed after a failed run. Listings

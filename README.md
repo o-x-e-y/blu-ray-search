@@ -26,9 +26,9 @@ the routine nor a film-list refresh needs NixOS.
 
 ## 4K players
 
-Each run also searches the whole country for Blu-ray players (two searches,
-"4k" and "uhd", in the Blu-ray player category) and shows the ones that name a
-4K model on a "4k players" tab. The pattern in `scout/fetch.py` looks for model
+Each run also reads every Blu-ray player listed in the country (about 350 ads,
+four requests) and shows the ones that name a 4K model on a "4k players" tab.
+A "4k" text search would miss ads that only give the model. The pattern in `scout/fetch.py` looks for model
 names (Sony UBP-X, Panasonic DP-UB, LG UBK, Oppo UDP and so on) rather than
 "4K", because players that only upscale to 4K, like the Panasonic DMP-BDT180,
 can't play 4K discs. Reserved and "gezocht" ads are left out.
