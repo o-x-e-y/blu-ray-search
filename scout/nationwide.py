@@ -23,11 +23,11 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 import render
-from fetch import API, UA, price
+from fetch import API, UA, posted, price
 
 HERE = Path(__file__).parent
 OUT = HERE / "nl"
@@ -61,7 +61,6 @@ SHOP_PRICES = [350, 500, 750, 1000, 1200, 1500, 2000, 2250, 2500, 2750, 2950, 30
 NEAR_KM = 30
 CAP = 5000
 CHUNK = 1000
-MONTHS = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
 
 
 def page(key: str, params: list, offset: int) -> dict:
@@ -146,20 +145,6 @@ def km_from_home(location: dict) -> int:
     lat1, lon1, lat2, lon2 = map(math.radians, (*HOME_AT, location.get("latitude", 0), location.get("longitude", 0)))
     a = math.sin((lat2 - lat1) / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin((lon2 - lon1) / 2) ** 2
     return round(12742 * math.asin(math.sqrt(a)))
-
-
-def posted(text: str, today: date) -> str:
-    if text == "Vandaag":
-        return today.isoformat()
-    if text in ("Gisteren", "Eergisteren"):
-        return (today - timedelta(days=1 if text == "Gisteren" else 2)).isoformat()
-    m = re.fullmatch(r"(\d{1,2}) (\w{3})\.?(?: '?(\d{2}))?", text)
-    if not m or m.group(2) not in MONTHS:
-        return ""
-    day, month = int(m.group(1)), MONTHS.index(m.group(2)) + 1
-    year = 2000 + int(m.group(3)) if m.group(3) else today.year
-    d = date(year, month, day)
-    return (d.replace(year=year - 1) if d > today else d).isoformat()
 
 
 def clean(text: str) -> str:
@@ -384,6 +369,8 @@ def render_page() -> None:
     page_ = page_.replace("<title>Blu-ray Scout</title>", "<title>Blu-ray Scout NL</title>")
     page_ = re.sub(r'<p class="lede">.*?</p>', f'<p class="lede">{html.escape(lede)}</p>', page_, count=1, flags=re.S)
     page_ = re.sub(r'\s*<a class="rerun".*?</a>', "", page_, count=1, flags=re.S)
+    page_ = re.sub(r'\s*<button role="tab"[^>]*aria-controls="players".*?</button>', "", page_, count=1, flags=re.S)
+    page_ = re.sub(r'\s*<div class="panel"[^>]*id="players".*?</div>', "", page_, count=1, flags=re.S)
     page_ = page_.replace(".badge.detour {", ".badge.near { background: var(--ok); color: var(--bg); padding: 0 6px; }\n"
                                              ".badge.near::before, .badge.near::after { content: none; }\n.badge.detour {")
     data = json.dumps({"films": sorted(films), "items": items}, ensure_ascii=False).replace("</", "<\\/")

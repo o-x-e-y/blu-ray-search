@@ -12,12 +12,18 @@ new. Listings the page already tracks and reserved ones are never new.
 The page also stores the film list it was matched against. Films added to
 films.txt since then go in recheck, with every listing that isn't new, so ads
 seen before get matched against them too.
+
+It also searches the whole country for 4K Blu-ray players and keeps the ones
+whose title or description names a 4K model. "4K upscaling" players can't play
+4K discs, so the pattern looks for model names rather than "4K".
 """
 import json
+import re
 import sys
 import time
 import urllib.parse
 import urllib.request
+from datetime import date, timedelta
 from pathlib import Path
 
 from render import DATA, films_by_slug
@@ -27,15 +33,32 @@ API = "https://www.marktplaats.nl/lrp/api/search"
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 SEARCHES = [("5611AC", 8000), ("5701RJ", 8000), ("5735SZ", 6000)]  # Eindhoven, Helmond, home
 PAGE = 100
+DISCS = {"l1CategoryId": 1744, "l2CategoryIds": 1745}
+PLAYERS = {"l1CategoryId": 31, "l2CategoryIds": 2665}
+PLAYER_QUERIES = ["4k", "uhd"]
+MONTHS = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+UHD = re.compile(r"\b(?:dp|dmp|dmr)[- ]?ub|\bubp[- ]?x\d|\bubk\d|\bubd[- ]?[km]?\d|\budp[- ]?(?:lx)?\d|\bubr[- ]?x\d|\bup970\b"
+                 r"|\bbdp[- ]?750\d|ultra[- ]?hd blu|uhd blu|4k uhd (?:blu|speler|player)", re.I)
 
 
-def search(postcode: str, distance: int) -> list[dict]:
+def posted(text: str, today: date) -> str:
+    if text == "Vandaag":
+        return today.isoformat()
+    if text in ("Gisteren", "Eergisteren"):
+        return (today - timedelta(days=1 if text == "Gisteren" else 2)).isoformat()
+    m = re.fullmatch(r"(\d{1,2}) (\w{3})\.?(?: '?(\d{2}))?", text)
+    if not m or m.group(2) not in MONTHS:
+        return ""
+    day, month = int(m.group(1)), MONTHS.index(m.group(2)) + 1
+    year = 2000 + int(m.group(3)) if m.group(3) else today.year
+    d = date(year, month, day)
+    return (d.replace(year=year - 1) if d > today else d).isoformat()
+
+
+def search(params: dict) -> list[dict]:
     listings, offset = [], 0
     while True:
-        query = urllib.parse.urlencode({
-            "l1CategoryId": 1744, "l2CategoryIds": 1745, "postcode": postcode, "distanceMeters": distance,
-            "limit": PAGE, "offset": offset,
-        })
+        query = urllib.parse.urlencode({**params, "limit": PAGE, "offset": offset})
         with urllib.request.urlopen(urllib.request.Request(f"{API}?{query}", headers={"User-Agent": UA}),
                                     timeout=30) as r:
             page = json.load(r)
@@ -65,6 +88,17 @@ def entry(l: dict) -> dict:
     }
 
 
+def players() -> list[dict]:
+    found = {}
+    for q in PLAYER_QUERIES:
+        found |= {l["itemId"]: l for l in search({**PLAYERS, "query": q})}
+    return [entry(l) | {"delivery": next((a["value"] for a in l.get("attributes", []) if a["key"] == "delivery"), ""),
+                        "since": posted(l.get("date", ""), date.today())}
+            for l in found.values()
+            if UHD.search(f'{l["title"]} {l.get("description", "")}') and not l.get("reserved")
+            and not l["title"].lower().startswith("gezocht")]
+
+
 def main() -> None:
     previous = {}
     if len(sys.argv) > 1:
@@ -75,11 +109,15 @@ def main() -> None:
     area = {}
     for postcode, distance in SEARCHES:
         try:
-            found = search(postcode, distance)
+            found = search({**DISCS, "postcode": postcode, "distanceMeters": distance})
         except OSError as e:
             sys.exit(f"search around {postcode} failed: {e}")
         print(f"{postcode} +{distance // 1000} km: {len(found)}", file=sys.stderr)
         area |= {l["itemId"]: l for l in found}
+    try:
+        found_players = players()
+    except OSError as e:
+        sys.exit(f"4K player search failed: {e}")
     if "seen" in previous:
         seen = set(previous["seen"])
         new = lambda l: l["itemId"] not in seen
@@ -95,9 +133,11 @@ def main() -> None:
         "reserved": sorted(i for i, l in area.items() if l.get("reserved")),
         "listings": listings,
         "recheck": {"films": added, "listings": recheck},
+        "players": found_players,
     }, ensure_ascii=False, indent=1))
     print(f"listings.json: {len(area)} listed in the area, {len(listings)} new, "
-          f"{len(recheck)} to recheck against {len(added)} added films")
+          f"{len(recheck)} to recheck against {len(added)} added films, "
+          f"{len(found_players)} 4K players")
 
 
 if __name__ == "__main__":

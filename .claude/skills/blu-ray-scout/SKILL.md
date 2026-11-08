@@ -44,7 +44,8 @@ holding the current page; you need it here and in step 7.
 scout/.venv/bin/python scout/fetch.py <saved page file>
 ```
 
-This runs the three searches without logging in and writes `scout/listings.json`.
+This runs the three area searches and two 4K player searches without logging
+in and writes `scout/listings.json`.
 The page stores which listings the last published run saw, so `listings` holds
 only the ones posted since, and nothing is missed after a failed run. Listings
 the page already tracks and reserved ones are left out. Each has `id`,
@@ -56,6 +57,10 @@ that array. If `fetch.py` fails, stop and report the error.
 (`recheck.films`, as slugs) and every other untracked listing in the area
 (`recheck.listings`, same fields). These ads were matched before, but not
 against those films. Both are empty when the film list hasn't changed.
+
+`players` holds the 4K Blu-ray players listed anywhere in the country, already
+filtered by model name. Don't match or open them: `render.py` puts them on
+their own tab as they are.
 
 If a listing is a set or collection and its description is cut off before the
 contents, open that listing's own page (its `url`) to read the full description.

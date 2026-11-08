@@ -24,6 +24,15 @@ the routine nor a film-list refresh needs NixOS.
 - **Model:** Haiku. It matched as well as Sonnet on the 2026-10-16 test; switch
   to Sonnet if it misses things.
 
+## 4K players
+
+Each run also searches the whole country for Blu-ray players (two searches,
+"4k" and "uhd", in the Blu-ray player category) and shows the ones that name a
+4K model on a "4k players" tab. The pattern in `scout/fetch.py` looks for model
+names (Sony UBP-X, Panasonic DP-UB, LG UBK, Oppo UDP and so on) rather than
+"4K", because players that only upscale to 4K, like the Panasonic DMP-BDT180,
+can't play 4K discs. Reserved and "gezocht" ads are left out.
+
 ## Trash
 
 Each ad on the page has a trash button. Trashed ids go to the page's own

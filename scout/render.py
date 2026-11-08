@@ -12,6 +12,9 @@ seller and since when they've been online, and for listings missing from the
 search, which are gone or outside the search circles. Only available finds are
 shown. Reserved ones stay tracked in case the reservation falls through; gone
 ones are dropped.
+
+4K players come fresh from every fetch, so they need no status check. The page
+stores the ones it showed, so only players it hasn't shown before are new.
 """
 import html
 import json
@@ -159,24 +162,33 @@ def main() -> None:
         item["new"] = True
 
     films = films_by_slug()
-    carried, unwanted = [], 0
+    previous = {}
     if len(args) > 1:
         found = DATA.search(Path(args[1]).read_text())
         if found:
-            fresh = {i["id"] for i in results["items"]}
-            for item in json.loads(found.group(1))["items"]:
-                if item["id"] in fresh:
-                    continue
-                item.pop("new", None)
-                wanted = [s for s in item["films"] if s in films]
-                if item["films"] and not wanted:
-                    unwanted += 1
-                    continue
-                item["films"] = wanted
-                carried.append(item)
+            previous = json.loads(found.group(1))
+    carried, unwanted = [], 0
+    fresh = {i["id"] for i in results["items"]}
+    for item in previous.get("items", []):
+        if item["id"] in fresh:
+            continue
+        item.pop("new", None)
+        wanted = [s for s in item["films"] if s in films]
+        if item["films"] and not wanted:
+            unwanted += 1
+            continue
+        item["films"] = wanted
+        carried.append(item)
     items = results["items"] + carried
 
     fetched = json.loads((HERE / "listings.json").read_text())
+    known = {p["id"]: p for p in previous.get("players", [])}
+    if "players" in fetched:
+        players = [p | {"found": known[p["id"]]["found"] if p["id"] in known else today, "new": p["id"] not in known}
+                   for p in fetched["players"]]
+    else:  # a re-render without a fetch keeps the last run's players
+        players = list(known.values())
+    players.sort(key=posted, reverse=True)
     seen, reserved = set(fetched["seen"]), set(fetched["reserved"])
     for item in items:
         if item["id"] in seen and "seller" in item:
@@ -207,16 +219,21 @@ def main() -> None:
         section("Collections to look into", "".join(card(i, films, today, chips=False) for i in lots), len(lots),
                 "Big lots whose ads don't list every title."),
     ])
+    player_cards = "".join(card(p | {"films": [], "detour": False, "flags": ["pickup only"] if p["delivery"] == "Ophalen" else []},
+                                films, today, chips=False) for p in players)
+    players_body = section("4K players", player_cards, len(players),
+                           "4K Blu-ray players listed anywhere in the country, picked out by model name, so "
+                           "players that only upscale to 4K are left out. Most ship; pickup-only ones are flagged.")
     sellers, sellers_n = by_seller(sets + singles + lots, films, today, best)
     by_seller_body = section("By seller", sellers, sellers_n,
                              "Grouped by who sells it, so one message can cover several ads. Best-rated film first, then sellers with the most ads.")
     stats = (f'<span>new <b>{len(results["items"])}</b></span><span>available <b>{len(shown)}</b></span>'
              f'<span>reserved, hidden <b>{count("reserved")}</b></span><span>sold since last run <b>{gone}</b></span>')
-    data = json.dumps({"seen": fetched["seen"], "films": sorted(films), "items": items}, ensure_ascii=False).replace("</", "<\\/")
+    data = json.dumps({"seen": fetched["seen"], "films": sorted(films), "items": items, "players": players}, ensure_ascii=False).replace("</", "<\\/")
     stamp = datetime.now(ZoneInfo("Europe/Amsterdam")).strftime("%H:%M")
     page = (HERE / "template.html").read_text()
     for key, value in {"__DATE__": today, "__TIME__": stamp, "__STATS__": stats, "__BY_FILM__": by_film_body,
-                       "__BY_SELLER__": by_seller_body,
+                       "__BY_SELLER__": by_seller_body, "__PLAYERS__": players_body,
                        "__DATA__": data}.items():
         page = page.replace(key, value)
     (HERE / "page.html").write_text(page)

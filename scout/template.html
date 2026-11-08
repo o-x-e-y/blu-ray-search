@@ -92,11 +92,13 @@ section { display: grid; gap: 12px; }
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" aria-controls="by-seller" id="tab-by-seller">by seller</button>
     <button role="tab" aria-selected="false" aria-controls="by-film" id="tab-by-film">by film</button>
+    <button role="tab" aria-selected="false" aria-controls="players" id="tab-players">4k players</button>
     <button role="tab" aria-selected="false" aria-controls="trash" id="tab-trash" hidden>trash <span id="trash-n"></span></button>
   </div>
   <div class="filter"><label>price €<input id="price-min" type="number" min="0" inputmode="decimal" placeholder="min"></label><label>to €<input id="price-max" type="number" min="0" inputmode="decimal" placeholder="max"></label><span>ads without a price stay in</span></div>
   <div class="panel" role="tabpanel" id="by-seller" aria-labelledby="tab-by-seller">__BY_SELLER__</div>
   <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden>__BY_FILM__</div>
+  <div class="panel" role="tabpanel" id="players" aria-labelledby="tab-players" hidden>__PLAYERS__</div>
   <div class="panel" role="tabpanel" id="trash" aria-labelledby="tab-trash" hidden><section><h2>Trash</h2><p class="note">Ads you've trashed, hidden from the other views. One that sells or gets reserved disappears from here too.</p><div class="list" id="trash-list"></div></section></div>
 </main>
 <script>
@@ -113,7 +115,7 @@ for (const tab of tabs) tab.addEventListener("click", () => show(tab.getAttribut
 try { const saved = localStorage.getItem("view"); if (saved !== "trash" && document.getElementById(saved)) show(saved); } catch {}
 
 let trash = null, trashed = new Map();
-const views = document.querySelectorAll("#by-seller, #by-film");
+const views = document.querySelectorAll("#by-seller, #by-film, #players");
 
 const range = [document.getElementById("price-min"), document.getElementById("price-max")];
 
@@ -144,7 +146,7 @@ function apply() {
       section.querySelector("h2 small").textContent = `[${n}]`;
     }
   }
-  const cards = [...trashed].sort((a, b) => b[1] - a[1]).map(([id]) => document.querySelector(`#by-seller .item[data-id="${CSS.escape(id)}"]`))
+  const cards = [...trashed].sort((a, b) => b[1] - a[1]).map(([id]) => document.querySelector(`#by-seller .item[data-id="${CSS.escape(id)}"], #players .item[data-id="${CSS.escape(id)}"]`))
     .filter(Boolean).map(item => {
       const card = item.cloneNode(true);
       card.hidden = false;
