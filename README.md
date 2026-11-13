@@ -42,6 +42,21 @@ restore button. Neither button asks for confirmation, since a mistake is one
 click to undo. The routine needs no part in it: a trashed ad stays tracked, so it is
 never offered as new again.
 
+## Stars
+
+Each film on the page has a star. Starred films go to a "starred" section at
+the top of the by-film view, sellers with one go to the top of the by-seller
+view, and the starred ads lead their seller's list. The routine reads the stars
+too and keeps a starred film's ads off the usual routes, as it does for 5★
+films.
+
+Both pages keep their stars in their own database, a `starred` collection with
+one document per film slug, `{"on": true|false, "at": <ms>}`. Unstarring writes
+`on: false` rather than deleting, so the two lists can drift apart and still be
+reconciled: ask Claude to reconcile the stars, which lists `starred` on both
+pages with the `ArtifactData` tool and copies each film's newer document (higher
+`at`) to the page where it's older or missing.
+
 ## Changing the page
 
 A change to `scout/template.html` alone doesn't need a scout run, which costs
@@ -81,6 +96,8 @@ scout/.venv/bin/python scout/nationwide.py full     # one page per cut-off set
 # one agent on scout/nl/full.txt, then merge again
 scout/.venv/bin/python scout/nationwide.py render
 ```
+
+Reconcile the stars (see Stars) before publishing, if you want both pages to agree.
 
 Haiku matches well enough for this and costs far less than Sonnet on 40
 chunks of 1,000 ads.

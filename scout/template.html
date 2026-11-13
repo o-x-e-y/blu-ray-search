@@ -74,7 +74,11 @@ section { display: grid; gap: 12px; }
 [hidden] { display: none !important; }
 .act { display: none; font: inherit; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   background: none; color: var(--muted); border: 1px solid var(--line); padding: 0 6px; cursor: pointer; }
-.can-trash .act { display: inline-block; }
+.can-edit .act { display: inline-block; }
+.star { display: none; font: inherit; line-height: 1; background: none; border: 0; padding: 0; margin-right: .5ch; color: var(--muted); cursor: pointer; }
+.can-edit .star { display: inline-block; }
+.star:hover, .star[aria-pressed="true"] { color: var(--amber); }
+.star:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .act:hover { color: var(--fg); border-color: var(--fg); }
 .act:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .note { font-size: .85rem; color: var(--muted); margin: 0; max-width: 70ch; }
@@ -97,7 +101,7 @@ section { display: grid; gap: 12px; }
   </div>
   <div class="filter"><label>price €<input id="price-min" type="number" min="0" inputmode="decimal" placeholder="min"></label><label>to €<input id="price-max" type="number" min="0" inputmode="decimal" placeholder="max"></label><span>ads without a price stay in</span></div>
   <div class="panel" role="tabpanel" id="by-seller" aria-labelledby="tab-by-seller">__BY_SELLER__</div>
-  <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden>__BY_FILM__</div>
+  <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden><section class="starred" hidden><h2>Starred <small></small></h2><p class="note">Films you starred and sets that hold one, whatever their rating or distance.</p><div class="list"></div></section>__BY_FILM__</div>
   <div class="panel" role="tabpanel" id="players" aria-labelledby="tab-players" hidden>__PLAYERS__</div>
   <div class="panel" role="tabpanel" id="trash" aria-labelledby="tab-trash" hidden><section><h2>Trash</h2><p class="note">Ads you've trashed, hidden from the other views. One that sells or gets reserved disappears from here too.</p><div class="list" id="trash-list"></div></section></div>
 </main>
@@ -115,6 +119,37 @@ for (const tab of tabs) tab.addEventListener("click", () => show(tab.getAttribut
 try { const saved = localStorage.getItem("view"); if (saved !== "trash" && document.getElementById(saved)) show(saved); } catch {}
 
 let trash = null, trashed = new Map();
+let stars = null, starred = new Set();
+const homes = new Map();
+const filmLinks = root => root.querySelectorAll('a[href^="https://letterboxd.com/film/"]');
+const slugOf = a => a.getAttribute("href").split("/")[4];
+
+function lift() {
+  for (const [el, home] of homes) home.replaceWith(el);
+  homes.clear();
+  for (const b of document.querySelectorAll(".star")) {
+    const on = starred.has(b.dataset.slug);
+    b.textContent = on ? "★" : "☆";
+    b.setAttribute("aria-pressed", on);
+  }
+  const has = el => [...filmLinks(el)].some(a => starred.has(slugOf(a)));
+  const move = (els, put) => {
+    for (const el of els) {
+      const home = document.createComment("");
+      el.replaceWith(home);
+      homes.set(el, home);
+    }
+    put(els);
+  };
+  const top = document.querySelector("#by-film .starred");
+  const films = [...document.querySelectorAll("#by-film .film, #by-film .list > .item")].filter(has);
+  move(films, els => top.querySelector(".list").append(...els));
+  top.hidden = !films.length;
+  const sellers = document.querySelector("#by-seller .list");
+  const first = [...sellers.children].filter(has);
+  for (const seller of first) move([...seller.querySelectorAll(":scope > .item")].filter(has), els => seller.querySelector("h3").after(...els));
+  move(first, els => sellers.prepend(...els));
+}
 const views = document.querySelectorAll("#by-seller, #by-film, #players");
 
 const range = [document.getElementById("price-min"), document.getElementById("price-max")];
@@ -160,6 +195,18 @@ function apply() {
 }
 
 document.addEventListener("click", async e => {
+  const b = e.target.closest(".star");
+  if (!b || !stars || b.disabled) return;
+  b.disabled = true;
+  try {
+    await stars.doc(b.dataset.slug).set({ on: !starred.has(b.dataset.slug), at: Date.now() });
+  } catch {
+    b.textContent = "!";
+  }
+  b.disabled = false;
+});
+
+document.addEventListener("click", async e => {
   const b = e.target.closest(".act");
   if (!b || !trash || b.disabled) return;
   b.disabled = true;
@@ -187,8 +234,23 @@ if (range.some(i => i.value)) apply();
   trash.onSnapshot(snap => {
     trashed = new Map(snap.docs.map(d => [d.id, d.data()?.at ?? 0]));
     apply();
-  }, () => { trash = null; document.body.classList.remove("can-trash"); });
-  document.body.classList.add("can-trash");
+  }, () => { trash = null; document.body.classList.remove("can-edit"); });
+  for (const a of filmLinks(document)) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "star";
+    b.dataset.slug = slugOf(a);
+    b.setAttribute("aria-label", `star ${a.textContent}`);
+    a.before(b);
+  }
+  stars = db.collection("starred");
+  stars.onSnapshot(snap => {
+    starred = new Set(snap.docs.filter(d => d.data()?.on).map(d => d.id));
+    lift();
+    apply();
+  }, () => { stars = null; });
+  lift();
+  document.body.classList.add("can-edit");
   document.getElementById("tab-trash").hidden = false;
 });
 </script>

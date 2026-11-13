@@ -40,6 +40,12 @@ The page lives at https://claude.ai/artifact/HkWBAnLZYRZ2CY8MRjuHji. Read it
 with the Artifact tool (`action: "read"`). The result names the saved file
 holding the current page; you need it here and in step 7.
 
+Then read the films the user starred on the page: the `ArtifactData` tool
+(load it with ToolSearch), `action: "list"`, collection `starred`, with the
+page URL. The starred films are the ids (slugs) of the documents whose `on` is
+true. If the tool isn't there or the read fails, carry on with none starred
+and say so in the report.
+
 ```bash
 scout/.venv/bin/python scout/fetch.py <saved page file>
 ```
@@ -108,6 +114,7 @@ listing only if one of these holds:
 - it's a set with two or more matched films
 - it has a watchlist film the user would really want
 - it has a film tagged anything other than `rated` or `watchlist`
+- it has a film the user starred
 
 For a watchlist film, judge from `scout/vendor/taste.md`: a director they
 follow, the kind of film they rate highly. Write the reason in `note`, e.g.
