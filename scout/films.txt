@@ -49,6 +49,7 @@ blue-moon-2025 | Blue Moon (2025) | rated 4.5
 boogie-nights | Boogie Nights (1997) | rated 4.5
 brokeback-mountain | Brokeback Mountain (2005) | rated 4.5
 bugonia | Bugonia (2025) | rated 4.5
+club-kid | Club Kid (2026) | rated 4.5
 clueless | Clueless (1995) | rated 4.5
 companion-2025 | Companion (2025) | rated 4.5
 dune-2021 | Dune (2021) | rated 4.5
@@ -61,7 +62,6 @@ furiosa-a-mad-max-saga | Furiosa: A Mad Max Saga (2024) | rated 4.5
 how-to-train-your-dragon-2025 | How to Train Your Dragon (2025) | rated 4.5
 i-swear | I Swear (2025) | rated 4.5
 inside-out-2015 | Inside Out (2015) | rated 4.5
-interstellar | Interstellar (2014) | rated 4.5
 kokuho | Kokuho (2025) | rated 4.5
 la-la-land | La La Land (2016) | rated 4.5
 little-miss-sunshine | Little Miss Sunshine (2006) | rated 4.5
@@ -144,6 +144,7 @@ familiar-touch | Familiar Touch (2024) | rated 4.0
 flow-2024 | Flow (2024) | rated 4.0
 gail-daughtry-and-the-celebrity-sex-pass | Gail Daughtry and the Celebrity Sex Pass (2026) | rated 4.0
 godzilla-minus-one | Godzilla Minus One (2023) | rated 4.0
+godzilla-minus-zero | Godzilla Minus Zero (2026) | rated 4.0
 good-luck-have-fun-dont-die | Good Luck, Have Fun, Don't Die (2025) | rated 4.0
 hell-or-high-water | Hell or High Water (2016) | rated 4.0
 hit-man-2023 | Hit Man (2023) | rated 4.0
@@ -229,6 +230,57 @@ when-harry-met-sally | When Harry Met Sally... (1989) | rated 4.0
 wicked-for-good | Wicked: For Good (2025) | rated 4.0
 wildwood-2026 | Wildwood (2026) | rated 4.0
 zootopia-2 | Zootopia 2 (2025) | rated 4.0
+the-godfather-part-iii | The Godfather Part III (1990) | watchlist
+the-godfather-part-ii | The Godfather Part II (1974) | watchlist
+the-godfather | The Godfather (1972) | watchlist
+the-french-dispatch-of-the-liberty-kansas | The French Dispatch of the Liberty, Kansas Evening Sun (2021) | watchlist
+the-royal-tenenbaums | The Royal Tenenbaums (2001) | watchlist
+sympathy-for-mr-vengeance | Sympathy for Mr. Vengeance (2002) | watchlist
+thirst-2009 | Thirst (2009) | watchlist
+stoker | Stoker (2013) | watchlist
+the-chaser | The Chaser (2008) | watchlist
+the-king-of-comedy | The King of Comedy (1982) | watchlist
+raging-bull | Raging Bull (1980) | watchlist
+casino | Casino (1995) | watchlist
+the-castle-of-cagliostro | The Castle of Cagliostro (1979) | watchlist
+the-wind-rises | The Wind Rises (2013) | watchlist
+castle-in-the-sky | Castle in the Sky (1986) | watchlist
+porco-rosso | Porco Rosso (1992) | watchlist
+ponyo | Ponyo (2008) | watchlist
+the-boy-and-the-heron | The Boy and the Heron (2023) | watchlist
+dune-part-three | Dune: Part Three (2026) | watchlist
+incendies | Incendies (2010) | watchlist
+sicario-2015 | Sicario (2015) | watchlist
+blade-runner-2049 | Blade Runner 2049 (2017) | watchlist
+prisoners | Prisoners (2013) | watchlist
+reprise | Reprise (2006) | watchlist
+louder-than-bombs | Louder Than Bombs (2015) | watchlist
+dazed-and-confused | Dazed and Confused (1993) | watchlist
+before-midnight | Before Midnight (2013) | watchlist
+before-sunset | Before Sunset (2004) | watchlist
+my-blueberry-nights | My Blueberry Nights (2007) | watchlist
+as-tears-go-by | As Tears Go By (1988) | watchlist
+2046 | 2046 (2004) | watchlist
+ah-fei-jing-juen | Days of Being Wild (1990) | watchlist
+happy-together-1997 | Happy Together (1997) | watchlist
+chungking-express | Chungking Express (1994) | watchlist
+fallen-angels | Fallen Angels (1995) | watchlist
+dunkirk-2017 | Dunkirk (2017) | watchlist
+tenet | Tenet (2020) | watchlist
+dersu-uzala | Dersu Uzala (1975) | watchlist
+red-beard | Red Beard (1965) | watchlist
+kagemusha | Kagemusha (1980) | watchlist
+sanjuro | Sanjuro (1962) | watchlist
+the-hidden-fortress | The Hidden Fortress (1958) | watchlist
+throne-of-blood | Throne of Blood (1957) | watchlist
+rashomon | Rashomon (1950) | watchlist
+yojimbo | Yojimbo (1961) | watchlist
+dreams | Dreams (1990) | watchlist
+ramayana-rise-of-a-legend | Ramayana: Rise of a Legend (2026) | watchlist
+starlet | Starlet (2012) | watchlist
+red-rocket-2021 | Red Rocket (2021) | watchlist
+the-florida-project | The Florida Project (2017) | watchlist
+possible-love | Possible Love (2026) | watchlist
 rrr | RRR (2022) | watchlist
 my-own-private-idaho | My Own Private Idaho (1991) | watchlist
 whats-up-doc-1972 | What's Up, Doc? (1972) | watchlist
@@ -279,7 +331,6 @@ home-sweet-home-2025 | Home Sweet Home (2025) | watchlist
 thoroughbreds-2017 | Thoroughbreds (2017) | watchlist
 gohan-2026 | Gohan (2026) | watchlist
 blow-out | Blow Out (1981) | watchlist
-chungking-express | Chungking Express (1994) | watchlist
 picnic-at-hanging-rock | Picnic at Hanging Rock (1975) | watchlist
 aguirre-the-wrath-of-god | Aguirre, the Wrath of God (1972) | watchlist
 her-private-hell-2026 | Her Private Hell (2026) | watchlist
@@ -293,7 +344,6 @@ throw-down | Throw Down (2004) | watchlist
 cold-war-2018 | Cold War (2018) | watchlist
 ida | Ida (2013) | watchlist
 clarissa-2026 | Clarissa (2026) | watchlist
-club-kid | Club Kid (2026) | watchlist
 hope-2026 | Hope (2026) | watchlist
 is-god-is | Is God Is (2026) | watchlist
 all-of-a-sudden-2026 | All of a Sudden (2026) | watchlist
@@ -305,7 +355,6 @@ the-assistant-2019 | The Assistant (2019) | watchlist
 20th-century-girl | 20th Century Girl (2022) | watchlist
 kingdom-of-heaven | Kingdom of Heaven (2005) | watchlist
 close-2022 | Close (2022) | watchlist
-ponyo | Ponyo (2008) | watchlist
 petite-maman | Petite Maman (2021) | watchlist
 cmon-cmon | C'mon C'mon (2021) | watchlist
 red-rooms | Red Rooms (2023) | watchlist
@@ -378,7 +427,6 @@ black-book | Black Book (2006) | watchlist
 belle-de-jour | Belle de Jour (1967) | watchlist
 letter-never-sent | Letter Never Sent (1960) | watchlist
 the-cranes-are-flying | The Cranes Are Flying (1957) | watchlist
-as-tears-go-by | As Tears Go By (1988) | watchlist
 the-childrens-hour | The Children's Hour (1961) | watchlist
 addams-family-values | Addams Family Values (1993) | watchlist
 wuthering-heights-2026 | Wuthering Heights (2026) | watchlist
@@ -502,7 +550,6 @@ mildred-pierce | Mildred Pierce (1945) | watchlist
 the-women | The Women (1939) | watchlist
 spider-man-beyond-the-spider-verse | Spider-Man: Beyond the Spider-Verse (2027) | watchlist
 selma | Selma (2014) | watchlist
-sicario-2015 | Sicario (2015) | watchlist
 the-goonies | The Goonies (1985) | watchlist
 apollo-13 | Apollo 13 (1995) | watchlist
 a-beautiful-mind | A Beautiful Mind (2001) | watchlist
@@ -733,7 +780,6 @@ uncut-gems | Uncut Gems (2019) | watchlist
 my-neighbor-totoro | My Neighbor Totoro (1988) | watchlist
 scott-pilgrim-vs-the-world | Scott Pilgrim vs. the World (2010) | watchlist
 asteroid-city | Asteroid City (2023) | watchlist
-the-boy-and-the-heron | The Boy and the Heron (2023) | watchlist
 the-zone-of-interest | The Zone of Interest (2023) | watchlist
 hundreds-of-beavers | Hundreds of Beavers (2022) | watchlist
 didi-2024 | Dìdi (弟弟) (2024) | watchlist
