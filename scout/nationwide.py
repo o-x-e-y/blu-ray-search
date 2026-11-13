@@ -26,6 +26,7 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+import deals
 import render
 from fetch import API, UA, posted, price
 
@@ -374,8 +375,13 @@ def render_page() -> None:
     page_ = page_.replace("<title>Blu-ray Scout</title>", "<title>Blu-ray Scout NL</title>")
     page_ = re.sub(r'<p class="lede">.*?</p>', f'<p class="lede">{html.escape(lede)}</p>', page_, count=1, flags=re.S)
     page_ = re.sub(r'\s*<a class="rerun".*?</a>', "", page_, count=1, flags=re.S)
-    page_ = re.sub(r'\s*<button role="tab"[^>]*aria-controls="players".*?</button>', "", page_, count=1, flags=re.S)
-    page_ = re.sub(r'\s*<div class="panel"[^>]*id="players".*?</div>', "", page_, count=1, flags=re.S)
+    deals_html, deals_n = deals.panel()
+    page_ = re.sub(r'<button role="tab"[^>]*aria-controls="players".*?</button>',
+                   f'<button role="tab" aria-selected="false" aria-controls="deals" id="tab-deals">deals [{deals_n}]</button>',
+                   page_, count=1, flags=re.S)
+    page_ = re.sub(r'<div class="panel"[^>]*id="players".*?</div>',
+                   lambda _: f'<div class="panel" role="tabpanel" id="deals" aria-labelledby="tab-deals" hidden>{deals_html}</div>',
+                   page_, count=1, flags=re.S)
     page_ = page_.replace(".badge.detour {", ".badge.near { background: var(--ok); color: var(--bg); padding: 0 6px; }\n"
                                              ".badge.near::before, .badge.near::after { content: none; }\n.badge.detour {")
     data = json.dumps({"films": sorted(films), "items": items}, ensure_ascii=False).replace("</", "<\\/")

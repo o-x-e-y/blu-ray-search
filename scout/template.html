@@ -85,6 +85,8 @@ section { display: grid; gap: 12px; }
   background: var(--surface); color: var(--fg); border: 1px solid var(--line); padding: 6px 14px; cursor: pointer; }
 .more:hover { border-color: var(--fg); }
 .more:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.sum { margin: 0; font-variant-numeric: tabular-nums; }
+.chip b { font-size: .75rem; color: var(--muted); }
 .note { font-size: .85rem; color: var(--muted); margin: 0; max-width: 70ch; }
 .empty { color: var(--muted); margin: 0; }
 .empty::before { content: "-- "; }
@@ -118,6 +120,7 @@ function show(id) {
     tab.setAttribute("aria-selected", on);
     document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
   }
+  document.querySelector(".filter").hidden = id === "deals";
   try { localStorage.setItem("view", id); } catch {}
   apply();
 }
