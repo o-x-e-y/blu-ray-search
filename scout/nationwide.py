@@ -311,11 +311,16 @@ def by_film(items: list, films: dict, today: str) -> tuple[str, int]:
 def render_page() -> None:
     results = json.loads((OUT / "results.json").read_text())
     listings = {l["id"]: l for l in json.loads((OUT / "listings.json").read_text())}
+    full_text = {}
+    for line in (OUT / "full.txt").read_text().splitlines():
+        id_, _, desc = (line.split(" | ", 2) + ["", ""])[:3]
+        full_text[id_] = desc
     films = render.films_by_slug()
     today = results["date"]
     items = []
     for match in results["items"]:
         item = listings[match["id"]] | match
+        item["description"] = full_text.get(match["id"], item["description"])
         item["films"] = list(dict.fromkeys(s for s in match["films"] if s in films))
         if match["films"] and not item["films"]:
             continue

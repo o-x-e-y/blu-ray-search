@@ -88,6 +88,56 @@ def film_link(slug: str, title: str) -> str:
             f'{html.escape(title)}</a>')
 
 
+FOURK = re.compile(r"\b(4k|uhd|ultra ?hd)\b", re.I)
+AMOUNT = r"(\d+(?:[.,]\d{1,2})?)"
+EURO = rf"(?:€\s*{AMOUNT}|{AMOUNT}\s*(?:euro|eur\b|€|,-))"
+PER_PIECE = re.compile(rf"{EURO}\s*(?:per stuk|p/?st(?:uk)?\b|p\.?s\.?(?!\w)|per (?:film|disc|titel)|elk|each)"
+                       rf"|per stuk\s*(?:kosten ze|is|voor|:)?\s*{EURO}|[áà]\s*{EURO}", re.I)
+NEXT_PRICE = re.compile(rf"^[^€]{{0,50}}?{EURO}", re.I)
+
+
+def amount(match: re.Match) -> float:
+    return float(next(g for g in match.groups() if g).replace(",", "."))
+
+
+def listed_price(text: str) -> float | None:
+    if text == "gratis":
+        return 0.0
+    found = re.search(r"€(\d+(?:[.,]\d+)?)", text)
+    return float(found[1].replace(",", ".")) if found else None
+
+
+def price_basis(item: dict, films: dict) -> tuple[float | None, int, int]:
+    """What the listed films cost, and how many of them are Blu-ray and 4K, for the page's per-format max price.
+
+    A set's listed price is often the price for everything while the text gives
+    a price per disc or per title, so those are read too and the lowest wins.
+    """
+    slugs = [s for s in item["films"] if s in films]
+    text = item["title"] + " " + item.get("description", "")
+    uhd = len(slugs) if "4K only" in item.get("flags", []) or FOURK.search(text) else 0
+    cost = listed_price(item["price"])
+    if (item.get("films_in_listing") or 1) >= 2 and slugs:
+        options = [cost] if cost is not None else []
+        tiers = [(m.start(), amount(m)) for m in PER_PIECE.finditer(text)]
+        per_piece, each = [], []
+        for slug in slugs:
+            name = re.sub(r"\s*\(\d{4}\)$", "", films[slug]["title"])
+            at = re.search(re.escape(name), text, re.I)
+            after = at and NEXT_PRICE.search(text[at.end():])
+            each.append(amount(after) if after else None)
+            if tiers:
+                # Price groups head their titles ("Overig €5,- p.s. Hook, Titanic"); a title not found gets the cheapest.
+                above = [price for start, price in tiers if at and start < at.start()]
+                per_piece.append(above[-1] if above else min(price for _, price in tiers))
+        if per_piece:
+            options.append(sum(per_piece))
+        if each and None not in each:
+            options.append(sum(each))
+        cost = min(options) if options else None
+    return cost, len(slugs) - uhd, uhd
+
+
 def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -> str:
     bits = []
     if chips:
@@ -97,6 +147,15 @@ def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -
     if (item.get("films_in_listing") or 1) >= 2:
         bits.append(f'<span class="chip dim">{item["films_in_listing"]} films in ad</span>')
     bits += [f'<span class="chip flag">{html.escape(f)}</span>' for f in item.get("flags", [])]
+    basis = ""
+    if item["films"]:
+        cost, bd, uhd = price_basis(item, films)
+        if cost is not None:
+            basis = f' data-cost="{cost:g}" data-bd="{bd}" data-uhd="{uhd}"'
+            if cost != listed_price(item["price"]):
+                n = bd + uhd
+                euros = f"€{cost:.2f}".replace(".", ",").replace(",00", "")
+                bits.append(f'<span class="chip dim">{euros} for your {n} film{"s" * (n > 1)}</span>')
     days = (date.fromisoformat(today) - date.fromisoformat(item.get("since") or item["found"])).days
     badges = '<span class="badge found">new</span>' if item.get("new") else ""
     badges += '<span class="badge new">&lt;1d ago</span>' if days < 1 else f'<span class="badge age">{days}d ago</span>'
@@ -106,7 +165,7 @@ def card(item: dict, films: dict, today: str, chips: bool, kind: bool = False) -
         badges += '<span class="badge detour">detour</span>'
     note = f'<p class="note">{html.escape(item["note"])}</p>' if item.get("note") else ""
     chips_html = f'<div class="chips">{"".join(bits)}</div>' if bits else ""
-    return f"""<div class="item" data-id="{html.escape(item["id"])}"><div class="row"><a href="{html.escape(item["url"].split("?")[0])}" target="_blank" rel="noopener">{badges}{html.escape(item["title"])}</a><span class="end"><span class="price">{html.escape(item["price"])}</span><button class="act" type="button" data-act="trash">trash</button></span></div>
+    return f"""<div class="item" data-id="{html.escape(item["id"])}"{basis}><div class="row"><a href="{html.escape(item["url"].split("?")[0])}" target="_blank" rel="noopener">{badges}{html.escape(item["title"])}</a><span class="end"><span class="price">{html.escape(item["price"])}</span><button class="act" type="button" data-act="trash">trash</button></span></div>
 {chips_html}<div class="where">{html.escape(item["town"])}</div>{note}</div>"""
 
 

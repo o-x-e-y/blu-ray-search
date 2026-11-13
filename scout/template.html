@@ -81,6 +81,10 @@ section { display: grid; gap: 12px; }
 .star:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .act:hover { color: var(--fg); border-color: var(--fg); }
 .act:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.more { justify-self: start; font: inherit; font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line); padding: 6px 14px; cursor: pointer; }
+.more:hover { border-color: var(--fg); }
+.more:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .note { font-size: .85rem; color: var(--muted); margin: 0; max-width: 70ch; }
 .empty { color: var(--muted); margin: 0; }
 .empty::before { content: "-- "; }
@@ -99,10 +103,11 @@ section { display: grid; gap: 12px; }
     <button role="tab" aria-selected="false" aria-controls="players" id="tab-players">4k players</button>
     <button role="tab" aria-selected="false" aria-controls="trash" id="tab-trash" hidden>trash <span id="trash-n"></span></button>
   </div>
-  <div class="filter"><label>price €<input id="price-min" type="number" min="0" inputmode="decimal" placeholder="min"></label><label>to €<input id="price-max" type="number" min="0" inputmode="decimal" placeholder="max"></label><span>ads without a price stay in</span></div>
+  <div class="filter"><label>max € per Blu-ray<input id="max-bd" type="number" min="0" inputmode="decimal" placeholder="6"></label><label>per 4K<input id="max-uhd" type="number" min="0" inputmode="decimal" placeholder="24"></label><span>sets count per film; ads without a price stay in</span></div>
   <div class="panel" role="tabpanel" id="by-seller" aria-labelledby="tab-by-seller">__BY_SELLER__</div>
   <div class="panel" role="tabpanel" id="by-film" aria-labelledby="tab-by-film" hidden><section class="starred" hidden><h2>Starred <small></small></h2><p class="note">Films you starred and sets that hold one, whatever their rating or distance.</p><div class="list"></div></section>__BY_FILM__</div>
   <div class="panel" role="tabpanel" id="players" aria-labelledby="tab-players" hidden>__PLAYERS__</div>
+  <section id="expensive" hidden><h2>Expensive <small></small></h2><p class="note">Ads over your max price per film. A set is measured by its films on your list, using a per-disc or per-title price from its text when that's lower.</p><button class="more" type="button" id="show-expensive" aria-expanded="false">show expensive</button><div class="list" hidden></div></section>
   <div class="panel" role="tabpanel" id="trash" aria-labelledby="tab-trash" hidden><section><h2>Trash</h2><p class="note">Ads you've trashed, hidden from the other views. One that sells or gets reserved disappears from here too.</p><div class="list" id="trash-list"></div></section></div>
 </main>
 <script>
@@ -114,9 +119,9 @@ function show(id) {
     document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
   }
   try { localStorage.setItem("view", id); } catch {}
+  apply();
 }
 for (const tab of tabs) tab.addEventListener("click", () => show(tab.getAttribute("aria-controls")));
-try { const saved = localStorage.getItem("view"); if (saved !== "trash" && document.getElementById(saved)) show(saved); } catch {}
 
 let trash = null, trashed = new Map();
 let stars = null, starred = new Set();
@@ -152,24 +157,19 @@ function lift() {
 }
 const views = document.querySelectorAll("#by-seller, #by-film, #players");
 
-const range = [document.getElementById("price-min"), document.getElementById("price-max")];
+const limits = [document.getElementById("max-bd"), document.getElementById("max-uhd")];
+const expensive = document.getElementById("expensive");
+const limit = input => { const v = parseFloat(input.value); return Number.isNaN(v) ? parseFloat(input.placeholder) : v; };
 
-function euros(item) {
-  const text = item.querySelector(".price").textContent;
-  if (text === "gratis") return 0;
-  const found = text.match(/€(\d+(?:[.,]\d+)?)/);
-  return found ? parseFloat(found[1].replace(",", ".")) : null;
-}
-
-function fits(item) {
-  const price = euros(item);
-  const [low, high] = range.map(input => parseFloat(input.value));
-  return price === null || !(price < low || price > high);
+function tooDear(item) {
+  if (!("cost" in item.dataset)) return false;
+  const [bd, uhd] = limits.map(limit);
+  return parseFloat(item.dataset.cost) > item.dataset.bd * bd + item.dataset.uhd * uhd;
 }
 
 function apply() {
   for (const view of views) {
-    for (const item of view.querySelectorAll(".item")) item.hidden = trashed.has(item.dataset.id) || !fits(item);
+    for (const item of view.querySelectorAll(".item")) item.hidden = trashed.has(item.dataset.id) || (view.id !== "players" && tooDear(item));
     for (const group of view.querySelectorAll(".film")) {
       const n = group.querySelectorAll(".item:not([hidden])").length;
       group.hidden = n === 0;
@@ -191,6 +191,12 @@ function apply() {
       return card;
     });
   document.getElementById("trash-list").replaceChildren(...cards);
+  const dear = [...document.querySelectorAll("#by-seller .item")].filter(item => !trashed.has(item.dataset.id) && tooDear(item))
+    .map(item => Object.assign(item.cloneNode(true), { hidden: false }));
+  expensive.querySelector(".list").replaceChildren(...dear);
+  expensive.querySelector("h2 small").textContent = `[${dear.length}]`;
+  const tab = document.querySelector('[role="tab"][aria-selected="true"]').getAttribute("aria-controls");
+  expensive.hidden = !dear.length || !["by-seller", "by-film"].includes(tab);
   document.getElementById("trash-n").textContent = `[${cards.length}]`;
 }
 
@@ -221,12 +227,20 @@ document.addEventListener("click", async e => {
   b.disabled = false;
 });
 
-try { JSON.parse(localStorage.getItem("price") || "[]").forEach((v, i) => range[i].value = v); } catch {}
-for (const input of range) input.addEventListener("input", () => {
-  apply();
-  try { localStorage.setItem("price", JSON.stringify(range.map(i => i.value))); } catch {}
+document.getElementById("show-expensive").addEventListener("click", e => {
+  const list = expensive.querySelector(".list");
+  list.hidden = !list.hidden;
+  e.target.setAttribute("aria-expanded", !list.hidden);
+  e.target.textContent = list.hidden ? "show expensive" : "hide expensive";
 });
-if (range.some(i => i.value)) apply();
+try { JSON.parse(localStorage.getItem("max") || "[]").forEach((v, i) => limits[i].value = v); } catch {}
+for (const input of limits) input.addEventListener("input", () => {
+  apply();
+  try { localStorage.setItem("max", JSON.stringify(limits.map(i => i.value))); } catch {}
+});
+let saved = null;
+try { saved = localStorage.getItem("view"); } catch {}
+show(saved !== "trash" && document.getElementById(saved) ? saved : "by-seller");
 
 (window.claude ? claude.use("db") : Promise.resolve(null)).then(db => {
   if (!db) return;
